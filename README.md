@@ -1,11 +1,3 @@
-Got it, Mike — I’ve added the JSON ↔ FTAI converter tool to the roadmap section and made sure the full README is clean and copy-ready.
-
-Here’s the revised, complete README.md with your update:
-
-⸻
-
-
-
 # .ftai – FolkTech AI Format
 
 **A universal, human-readable, AI-native memory format.**  
@@ -76,14 +68,14 @@ Inline prose	No quotes or escaping—write like a journal or message
 
 🔧 Tooling Roadmap
 
-Tool	Status
-✅ Swift parser	In development
-✅ Python parser	In development
-⏳ FTAI → JSON converter	Planned
-⏳ JSON → FTAI converter	Planned
-⏳ VS Code syntax highlighter	Planned
-⏳ Schema linter / validator	Planned
-
+| Tool                            | Status        |
+|---------------------------------|---------------|
+| Swift parser                    | 🛠️ In Dev      |
+| Python parser                   | 🛠️ In Dev      |
+| FTAI → JSON converter           | 📌 Planned     |
+| JSON → FTAI converter           | 📌 Planned     |
+| VS Code syntax highlighter      | 📌 Planned     |
+| Schema linter / validator       | 📌 Planned     |
 
 
 ⸻
@@ -112,3 +104,7 @@ We’re building this format in the open.
 Submit ideas, report parser issues, or contribute a tool.
 
 👉 https://github.com/mfolk77/ftai-spec
+
+
+
+© 2025 FolkTech AI • Format maintained by Mike Folk and contributors.
