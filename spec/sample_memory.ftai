@@ -1,0 +1,20 @@
+@ftai folktech-memory (2025-04-19)
+@document
+title: The Origin of FolkTech AI
+author: Mike Folk
+schema: founder_note
+tags: [history, identity, ai]
+---
+
+FolkTech AI was founded by Mike Folk, a paramedic, educator, and developer who believed that AI could revolutionize human health, education, and communication.
+
+The company started with a simple vision — to build AI tools that served real-world needs, starting with EMS and healthcare. Pocket Medic, Serena, and Jake are just the beginning.
+
+---
+
+@ai
+mode: core_memory
+relevance: founder_identity
+persistence: permanent
+encoding: sentimental_logical
+@end
