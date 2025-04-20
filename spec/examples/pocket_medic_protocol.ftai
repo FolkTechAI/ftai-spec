@@ -1,0 +1,33 @@
+@ftai protocol-doc (2025-04-19)
+@document {
+  title: "Cardiac Arrest Protocol"
+  author: "Southern Nevada Health District"
+  tags: ["cardiac", "ems", "protocol"]
+  schema: "ems_protocol_v1"
+}
+
+---
+
+This protocol outlines emergency management steps for cardiac arrest patients in the prehospital setting.
+
+**Key Interventions:**
+- Begin high-quality CPR immediately
+- Apply defibrillator and analyze rhythm
+- Administer Epinephrine 1mg IV/IO every 3-5 minutes
+- Consider Amiodarone 300mg IV/IO after third shock
+
+**Post-ROSC:**
+- Maintain oxygen saturation 94-99%
+- Monitor end-tidal CO2 (35-45 mmHg)
+- Initiate transport to closest cardiac center
+
+---
+
+@ai {
+  mode: "ems_support"
+  encoding: "clinical"
+  relevance: "cardiac_protocol"
+  persistence: "session"
+  priority: "high"
+}
+@end
