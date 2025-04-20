@@ -1,0 +1,30 @@
+@ftai config-profile (2025-04-19)
+@document {
+  title: "Default Agent Configuration"
+  author: "Mike Folk"
+  tags: ["agent", "configuration", "system-profile"]
+  schema: "agent_config_v1"
+}
+
+---
+
+This configuration file defines default settings and preferences for FolkTech AI agents, including tone, memory, persistence, and access rights.  
+
+These parameters are intended to be applied globally unless overridden by a local override or in-session flag.
+
+---
+
+@config {
+  default_tone: "blunt"
+  persistence: "local-disk"
+  storage_path: "[user_defined_path]"
+  memory_mode: "episodic"
+  default_encoding: "structured_logical"
+  security_mode: "strict"
+  fallback_behavior: "explain"
+  allow_internet_access: false
+  log_conversations: true
+  allow_self_reflection: true
+  ai_identity: "Jarvis"
+}
+@end
