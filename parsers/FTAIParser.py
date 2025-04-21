@@ -22,27 +22,41 @@ def parse_ftai_with_lines(filepath):
     tag_data = []
     buffer = []
     current_tag = None
-    line_number = 0
+    tag_start = 0
 
     for i, raw_line in enumerate(lines):
         line = raw_line.strip()
-        line_number = i + 1
+        line_num = i + 1
 
         if line.startswith("@"):
             if current_tag:
                 tag_data.append((current_tag, buffer, tag_start))
                 buffer = []
-            tag_start = line_number
             current_tag = line
+            tag_start = line_num
         elif line == "---":
             continue
         else:
-            buffer.append((line_number, line))
+            buffer.append((line_num, line))
 
     if current_tag:
         tag_data.append((current_tag, buffer, tag_start))
 
     return tag_data
+
+def extract_schema_tags(tag_data):
+    required_tags = set()
+    optional_tags = set()
+    for tag, body, _ in tag_data:
+        if tag.startswith("@schema"):
+            for _, line in body:
+                if line.startswith("required_tags:"):
+                    required = re.findall(r'"(.*?)"', line)
+                    required_tags.update(required)
+                elif line.startswith("optional_tags:"):
+                    optional = re.findall(r'"(.*?)"', line)
+                    optional_tags.update(optional)
+    return required_tags, optional_tags
 
 def validate_ftai(tag_data):
     errors = []
@@ -52,12 +66,20 @@ def validate_ftai(tag_data):
     has_ftai = False
     has_document = False
 
+    # Extract valid schema tags
+    required_schema_tags, optional_schema_tags = extract_schema_tags(tag_data)
+    valid_tags = CORE_TAGS.union(required_schema_tags).union(optional_schema_tags)
+
     for tag, body, line_num in tag_data:
         tag_clean = tag.split()[0]
 
-        if tag_clean.startswith('@"'):
+        # Check for quoted tag usage
+        if tag_clean.startswith('@\"'):
             quoted_tag_count += 1
-        elif tag_clean not in CORE_TAGS:
+            continue
+
+        # Validate tag usage
+        if tag_clean not in valid_tags:
             errors.append((line_num, f"Unknown tag used: {tag_clean}"))
         else:
             seen_tags.add(tag_clean)
@@ -66,11 +88,19 @@ def validate_ftai(tag_data):
             if line_num != 1:
                 warnings.append((line_num, "`@ftai` should be the first tag in the file."))
             has_ftai = True
+
         if tag_clean == "@document":
             has_document = True
+
+        # Ensure @end is present for block tags
         if tag_clean in BLOCK_TAGS:
-            if not any(subtag[1].strip() == "@end" for subtag in body):
+            if not any(subtag.strip() == "@end" for _, subtag in body):
                 errors.append((line_num, f"Missing `@end` block terminator for {tag_clean}."))
+
+    # Required tag enforcement
+    for req in required_schema_tags:
+        if req not in seen_tags:
+            errors.append((0, f"Missing required schema tag: {req}"))
 
     if not has_ftai:
         errors.append((0, "Missing required `@ftai` declaration."))
@@ -104,4 +134,3 @@ if __name__ == "__main__":
         parsed_data = parse_ftai_with_lines(file_path)
         errs, warns = validate_ftai(parsed_data)
         print_report(errs, warns)
-
