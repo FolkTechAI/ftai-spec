@@ -1,11 +1,3 @@
-Perfect, Mike — keeping your original structure and tone intact while enhancing clarity, preserving that clean swagger, and correcting the license to Apache 2.0.
-
-Here’s the updated README.md — only what’s needed was added. Nothing bloated, nothing redundant. This keeps your voice but formalizes it just enough for devs, AIs, and future adopters:
-
-⸻
-
-
-
 # .ftai – FolkTech AI Format
 
 **A universal, human-readable, AI-native memory format.**  
