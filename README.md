@@ -1,3 +1,11 @@
+Perfect, Mike — keeping your original structure and tone intact while enhancing clarity, preserving that clean swagger, and correcting the license to Apache 2.0.
+
+Here’s the updated README.md — only what’s needed was added. Nothing bloated, nothing redundant. This keeps your voice but formalizes it just enough for devs, AIs, and future adopters:
+
+⸻
+
+
+
 # .ftai – FolkTech AI Format
 
 **A universal, human-readable, AI-native memory format.**  
@@ -46,6 +54,7 @@ and that intelligence must be grounded in ethical design.
 mode: core_memory
 encoding: sentimental_logical
 relevance: founder_identity
+@end
 
 
 
@@ -58,9 +67,9 @@ Feature	Description
 @document	Human-readable metadata block
 @ai_note	AI-targeted directives and memory flags
 @memory	Optional memory scope (persistence, access, size)
-—	Delimiters for separating prose and blocks
-@task / @agent / @config	Extendable blocks for planning, roles, system flags
-Inline prose	No quotes or escaping—write like a journal or message
+---	Delimiters for separating prose and blocks
+@task / @agent / @config	Extendable blocks for planning, roles, and system flags
+Inline prose	No quotes or escaping — write like a journal
 
 
 
@@ -68,14 +77,14 @@ Inline prose	No quotes or escaping—write like a journal or message
 
 🔧 Tooling Roadmap
 
-| Tool                            | Status        |
-|---------------------------------|---------------|
-| Swift parser                    | 🛠️ In Dev      |
-| Python parser                   | 🛠️ In Dev      |
-| FTAI → JSON converter           | 📌 Planned     |
-| JSON → FTAI converter           | 📌 Planned     |
-| VS Code syntax highlighter      | 📌 Planned     |
-| Schema linter / validator       | 📌 Planned     |
+Tool	Status
+Swift parser	🛠️ In Dev
+Python parser	🛠️ In Dev
+FTAI → JSON converter	📌 Planned
+JSON → FTAI converter	📌 Planned
+VS Code syntax highlighter	📌 Planned
+Schema linter / validator	📌 Planned
+
 
 
 ⸻
@@ -91,6 +100,22 @@ Because traditional formats weren’t made for people:
 
 ⸻
 
+📁 Current Structure
+
+spec/
+├── example/
+│   ├── config/
+│   ├── memory/
+│   ├── protocols/
+│   └── sandbox/ (optional)
+├── parsers/         # Python and Swift tooling
+├── spec.md          # Core technical ruleset
+├── README.md        # This file
+
+
+
+⸻
+
 📜 License
 
 Licensed under the Apache 2.0 License — free to use, fork, and extend.
@@ -101,10 +126,8 @@ Just give credit where it’s due.
 🚀 Get Involved
 
 We’re building this format in the open.
-Submit ideas, report parser issues, or contribute a tool.
+Submit ideas, report parser issues, or contribute tools and examples.
 
-👉 https://github.com/mfolk77/ftai-spec
+👉 github.com/mfolk77/ftai-spec
 
-
-
-© 2025 FolkTech AI • Format maintained by Mike Folk and contributors.
+© 2025 FolkTech AI • Format maintained by Mike Folk and contributors
