@@ -1,3 +1,9 @@
+Got it, Mike. Here’s your fully rewritten, clean, no-fluff version of the README.md for the parsers/ folder — direct copy-paste into GitHub:
+
+⸻
+
+
+
 # 🧠 FTAI Parsers
 
 This folder contains all official `.ftai` format parsers for FolkTech’s FTAI standard.  
@@ -30,3 +36,24 @@ To run the Python validator:
 ```bash
 cd python
 python3 ftai_linter.py sample_valid.ftai
+
+It will print a full diagnostic report with:
+	•	✅ Pass/fail status
+	•	🔍 Line-by-line fatal errors and warnings
+	•	🔐 Schema tag enforcement
+
+⸻
+
+🍎 Swift Integration (Early)
+
+The Swift parser is now live (FTAIParser.swift) and returns FTAIBlock arrays for validation.
+Used in apps like Pocket Medic or Serena to load .ftai instructions, protocol sets, or AI memory files.
+
+Validator (FTAIValidator.swift) coming next.
+
+⸻
+
+For issues or suggestions, submit a PR or open an issue at:
+👉 github.com/mfolk77/ftai-spec
+
+
