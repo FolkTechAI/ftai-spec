@@ -1,0 +1,3 @@
+# Treat FTAI files as text and enable proper diffing
+*.ftai text
+*.ftai diff
