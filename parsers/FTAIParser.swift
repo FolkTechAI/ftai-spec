@@ -1,46 +1,65 @@
 import Foundation
 
-struct FTAISection {
-    var header: String?
-    var content: String
+struct FTAIBlock {
+    let tag: String
+    let header: String?
+    let content: [String]
+    let lineNumber: Int
 }
 
 class FTAIParser {
-    static func parse(fileURL: URL) -> [String: FTAISection] {
+    static func parseStrict(fileURL: URL) -> [FTAIBlock] {
         guard let content = try? String(contentsOf: fileURL, encoding: .utf8) else {
-            print("Error: Could not read file.")
-            return [:]
+            print("❌ Error: Could not read .ftai file.")
+            return []
         }
 
-        var results: [String: FTAISection] = [:]
-        var currentSection: String?
-        var header: String?
+        var blocks: [FTAIBlock] = []
+        var currentTag: String?
+        var currentHeader: String?
         var buffer: [String] = []
+        var tagStartLine: Int = 0
 
         let lines = content.components(separatedBy: .newlines)
 
-        for line in lines {
-            let trimmed = line.trimmingCharacters(in: .whitespaces)
-            if trimmed.hasPrefix("@") {
-                if let section = currentSection {
-                    results[section] = FTAISection(header: header, content: buffer.joined(separator: "\n"))
+        for (index, rawLine) in lines.enumerated() {
+            let line = rawLine.trimmingCharacters(in: .whitespaces)
+            let lineNumber = index + 1
+
+            if line.hasPrefix("@") {
+                if let tag = currentTag {
+                    let block = FTAIBlock(
+                        tag: tag,
+                        header: currentHeader,
+                        content: buffer,
+                        lineNumber: tagStartLine
+                    )
+                    blocks.append(block)
+                    buffer.removeAll()
                 }
-                buffer.removeAll()
-                let parts = trimmed.dropFirst().split(separator: " ", maxSplits: 1).map(String.init)
-                currentSection = parts.first?.lowercased()
-                header = parts.count > 1 ? parts[1] : nil
-            } else if trimmed == "---" {
+
+                let components = line.dropFirst().split(separator: " ", maxSplits: 1).map(String.init)
+                currentTag = components.first
+                currentHeader = components.count > 1 ? components[1] : nil
+                tagStartLine = lineNumber
+            } else if line == "---" {
                 continue
             } else {
-                buffer.append(trimmed)
+                buffer.append(line)
             }
         }
 
-        // Final section
-        if let section = currentSection {
-            results[section] = FTAISection(header: header, content: buffer.joined(separator: "\n"))
+        // Add final block
+        if let tag = currentTag {
+            let block = FTAIBlock(
+                tag: tag,
+                header: currentHeader,
+                content: buffer,
+                lineNumber: tagStartLine
+            )
+            blocks.append(block)
         }
 
-        return results
+        return blocks
     }
 }
