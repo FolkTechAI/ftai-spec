@@ -1,0 +1,57 @@
+@ftai folktech-issue-log (2025-04-21)
+
+@document
+title: Pocket Medic QA Report
+author: Mike Folk
+schema: issue_log_v1
+tags: [QA, critical_review, pocketmedic]
+---
+
+FolkTech internal QA audit generated from Augment + Jarvis review.
+Issues are tracked in `.ftai` format for clarity, export, and validation.
+
+---
+@issue
+id: 001
+severity: critical
+location: PocketMedic/Features/Calculators/DrugDosageCalculatorView.swift
+description: Medication file fails silently if not found. Returns empty array with no error surfaced to user. try? swallows error. No retry or alert.
+recommendation: Implement `MedicationLoadError` enum. Add user-visible alert and retry option. Avoid silent fail fallback.
+status: open
+@end
+
+@issue
+id: 002
+severity: critical
+location: extra files/Paramedic Pocket/MainView.swift
+description: Query processing lacks input sanitization, error handling, offline check, or retry. Clears input before processing completes.
+recommendation: Use async error-handled flow. Add timeout logic. Store pre-cleared input for retry. Implement `QueryError` enum.
+status: open
+@end
+
+@issue
+id: 003
+severity: critical
+location: extra files/Paramedic Pocket/LocalLLMManager.swift
+description: handleMemoryWarning() creates new instance instead of cleaning up. No user notification. No thread-safety or recovery strategy.
+recommendation: Use `DispatchQueue` + `NSLock`. Notify user via NotificationCenter. Proper unload + recovery plan with logs.
+status: open
+@end
+
+@issue
+id: 004
+severity: critical
+location: extra files/Paramedic Pocket/Models/MedicalProtocol.swift
+description: Silent fallback to default protocols. No integrity check, versioning, or error notification. Blocking main thread with file I/O.
+recommendation: Async load with error throws. Add version check, content validation, and user alert. Avoid main-thread data loading.
+status: open
+@end
+
+@issue
+id: 005
+severity: moderate
+location: extra files/Paramedic Pocket/Models/Managers.swift.bak
+description: RAGManager is a placeholder. No actual RAG logic. No validation, error handling, or production use safeguards.
+recommendation: Replace with actual TinyBERT RAG or SQL-based fallback. Add input validation, async handling, and monitoring.
+status: open
+@end
