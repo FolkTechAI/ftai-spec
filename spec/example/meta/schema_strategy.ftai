@@ -1,0 +1,61 @@
+@ftai v2.0
+
+@document
+title: Schema + Quoted Tag Strategy
+author: Gemini
+tags: [schema, validation, ftai_design, commentary]
+schema: commentary_note
+date: 2025-04-21
+
+---
+
+@insight
+The `.ftai` format’s use of `@schema` and `@"custom_tag"` creates a layered approach to flexibility and enforcement.
+
+It solves the age-old conflict of “strict vs usable” by implementing:
+1. Strict base enforcement
+2. Override via defined schema
+3. Temporary edge-case usage via quoted tag escape
+
+---
+
+@core_benefits
+- Domain-specific validation (e.g. EMS, legal, system config)
+- Human- and AI-readable
+- Maintainable over time with schema versioning
+- Error-preventive through strict default parsing
+
+---
+
+@quoted_tag
+Quoted tags like `@"dose_route"` act as sanctioned escape hatches. 
+They allow users to:
+- Signal a non-standard tag
+- Bypass default linter rules
+- Avoid polluting the global tag pool
+
+Usage: Only when not covered by a schema. Encouraged in exploratory mode.
+
+---
+
+@schema_examples
+- `ems_medication_v1`: Drug cards, categories, antidotes, dosage
+- `protocol_config_v2`: EMS protocol logic, routing, conditions
+- `legal_request`: Case ID, statute, response window, motion type
+
+---
+
+@recommendations
+1. ✅ Build a visual schema builder
+2. ✅ Maintain a schema registry
+3. ✅ Add schema version comparison / diff tools
+4. ✅ Provide CLI schema validation tools
+5. ✅ Encourage `"// inline comments"` inside schema blocks for clarity
+
+---
+
+@closing_note
+This strategy should be central in all AI-agent and RAG-linter parsing flows. 
+The `@schema` + `@"tag"` combo makes `.ftai` not just a format — but a **communication protocol between humans and machines.**
+
+@end
