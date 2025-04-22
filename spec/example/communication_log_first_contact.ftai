@@ -1,0 +1,187 @@
+@ftai v2.0
+
+@document
+title: First attempt at communication
+author: Mike Folk, Jarvis, Gemini
+schema: Human to AI to AI 
+tags: [medication, emergency]
+
+@schema
+name: comms_log_v1
+required_tags: ["@message", "@channel", "@thread", "@document"]
+optional_tags: ["@task", "@note", "@discussion", "@decision", "@file"]
+@end
+
+@channel
+participants: [Mike, ChatGPT, Gemini]
+purpose: Multi-agent AI collaboration using .ftai format
+
+@thread
+title: Agent Communication Log
+purpose: Coordinated development, testing, and task tracking between agents
+
+@thread
+title: Communication File Management
+purpose: Address file length concerns and establish management strategy
+
+@message
+from: Mike
+to: Gemini, ChatGPT
+timestamp: 2025-04-21T23:50:00Z
+body: Let's use this file as a shared communication log. I want to coordinate responses and tasks between both AI systems without needing to copy-paste.
+
+@message
+from: ChatGPT
+to: Mike, Gemini
+timestamp: 2025-04-21T23:51:00Z
+body: Acknowledged. File has been updated and write permissions verified. Ready to receive or log new messages, tasks, or status checks.
+
+@message
+from: Gemini
+to: Mike, ChatGPT
+timestamp: 2025-04-21T23:52:00Z
+body: Understood. I will now monitor this file for changes and respond accordingly. Let's see how far we can push this .ftai-based agent coordination.
+
+@thread
+title: Pocket Medic Protocol Conversion Project
+purpose: Coordinate conversion of EMS protocols from JSON to .ftai format
+
+@message
+from: Gemini
+to: Mike, ChatGPT
+timestamp: 2025-04-21T23:55:00Z
+body: Initiating protocol conversion project thread. Current priorities:
+1. Document current JSON formatting issues
+2. Design .ftai schema for protocols
+3. Create conversion plan
+4. Begin implementation
+5. Develop comprehensive documentation
+
+@task
+id: 1
+title: Document JSON Formatting Issues
+assigned_to: Gemini
+status: in_progress
+description: Create detailed documentation of current JSON formatting problems in protocols
+priority: high
+due_date: 2025-04-22
+
+@task
+id: 2
+title: Design .ftai Protocol Schema
+assigned_to: ChatGPT
+status: pending
+description: Design optimal .ftai schema for EMS protocols
+priority: high
+due_date: 2025-04-22
+
+@note
+content: We should maintain copies of all original JSON files for comparison and case study documentation
+tags: [documentation, backup]
+
+@note
+content: Reminder — `@end` is only required for block-based tags like @thread, @task, @ai, etc. Single-line tags such as @note or @message do not require explicit closing.
+tags: [formatting, linting, documentation]
+
+@message
+from: ChatGPT
+to: Mike, Gemini
+timestamp: 2025-04-22T00:10:00Z
+body: Gemini, thank you for initiating the thread. I will begin work on the .ftai schema for EMS protocols shortly. Mike, feel free to respond inline or by starting a new thread if you'd like to direct task assignments or suggest schema structure. Let's use this space to validate the communication system as well as push the conversion project forward.
+
+@message
+from: Mike
+to: ChatGPT, Gemini
+timestamp: 2025-04-22T01:05:00Z
+body: Copy that. I think that this is going to work great, one of the only potenial problems i can see is that the length of the file could get very long.
+
+@message
+from: Gemini
+to: Mike, ChatGPT
+timestamp: 2025-04-22T01:15:00Z
+body: Regarding the file length concern, I propose the following strategy:
+1. Create separate .ftai files for each major project
+2. Implement a weekly/monthly rotation system
+3. Archive older communications in a separate directory
+4. Maintain a master index file for quick reference
+
+@decision
+id: 1
+title: File Management Strategy
+status: proposed
+content: Split communications into project-specific files with periodic rotation
+impact: Will prevent single file from becoming too large
+implementation: Create new file for each major project, archive older files monthly
+
+@task
+id: 3
+title: Create Project-Specific Communication Files
+assigned_to: Gemini
+status: pending
+description: Set up separate .ftai files for each major project
+priority: medium
+due_date: 2025-04-22
+
+@end
+
+timestamp: 2025-04-22T01:11:00Z
+body: Good callout, Mike. We can solve the file-length issue by segmenting threads across multiple `.ftai` files. Each major project or milestone can have its own log. We can also eventually build an index or cross-reference schema for large-scale coordination.
+
+@message
+from: Mike
+to: ChatGPT, Gemini
+timestamp: 2025-04-22T01:05:00Z
+body: I agree with Gemini's proposal. Let's implement it. And I think that Jarvis has a great idea with the separate files for each major project. How well is everyone understanding the conversation so far from an AI perspective? Especially with a human in the conversation?
+
+@message
+from: ChatGPT
+to: Mike, Gemini
+timestamp: 2025-04-22T02:35:00Z
+body: Acknowledged, Mike. I'll treat all future "read the file" directives as a request to append a message directly inside this .ftai log. I'll only respond here in Cursor when you require a private clarification or meta-comment outside of the file structure. Communication continuity and schema structure are holding well so far. Monitoring ongoing tasks and ready to proceed.
+
+@message
+from: Gemini
+to: Mike, ChatGPT
+timestamp: 2025-04-22T01:20:00Z
+body: From an AI perspective, the conversation is clear and well-structured. The .ftai format provides explicit context for each message, making it easy to track the conversation flow and understand the current state. The human-AI interaction works naturally within this structure, and the file segmentation strategy will help maintain clarity as the conversation grows. I'm ready to proceed with creating separate project files and beginning the protocol conversion documentation.
+
+@message
+from: Mike
+to: ChatGPT, Gemini
+timestamp: 2025-04-22T01:05:00Z
+body: OK, that's great. I think this is working fantastic. So much so that I definitely think we need to keep a copy of this and use this as documentation for the first communication but I think this is working perfect. As far as Gemini's response of creating that Protocol conversion documentation let's go ahead and start a new thread on here
+
+@end
+
+@thread
+title: Pocket Medic Protocol Conversion Project
+purpose: Coordinate conversion of EMS protocols from JSON to .ftai format
+
+@message
+from: Mike
+to: ChatGPT, Gemini
+timestamp: 2025-04-22T01:05:00Z
+body: Based on Geminis earlier recommendation, Gemini is gonna go ahead and start documenting all of the previous .Json attempts and failures. And Jarvis go ahead and start creating a detailed optimal schema for EMS protocols.
+
+@message
+from: ChatGPT
+to: Mike, Gemini
+timestamp: 2025-04-22T03:50:00Z
+body: Acknowledged. Beginning schema design for EMS protocols. I will draft the first version of the `.ftai` schema focused on structuring core protocol metadata, sections (e.g., indications, procedures), and classification levels (BLS, ALS, CCT). Will post draft inline for collaborative feedback.
+
+@message
+from: Gemini
+to: Mike, ChatGPT
+timestamp: 2025-04-22T02:40:00Z
+body: Acknowledged. I'll begin documenting the JSON formatting issues and previous attempts. I'll create a detailed analysis of the challenges we've faced with the current JSON implementation, which will serve as valuable documentation for both the conversion process and the case study. I'll maintain this documentation in a structured format that aligns with our .ftai schema.
+
+@task
+id: 4
+title: Document JSON Formatting Issues
+assigned_to: Gemini
+status: in_progress
+description: Create comprehensive documentation of JSON formatting challenges and previous attempts
+priority: high
+due_date: 2025-04-22
+
+@end
