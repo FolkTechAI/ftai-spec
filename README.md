@@ -1,121 +1,95 @@
-# .ftai – FolkTech AI Format
+# `.ftai — Functional Traceable AI Architecture Format`
 
-**A universal, human-readable, AI-native memory format.**  
-Created to bridge the gap between how people write and how AI learns.
-
----
-
-## 📌 What Is `.ftai`?
-
-`.ftai` is a plain-text format that combines Markdown-style readability with structured `@section` tags for AI parsing. It was designed for:
-
-- Cross-language AI memory (Python ↔ Swift)
-- AI-to-AI communication
-- Embedding emotional tone, context, and relevance
-- Eliminating redundant documentation between humans and machines
-- Parsing without needing external dependencies or markup escaping
+**Human-readable. Machine-verifiable. Future-proof.**
 
 ---
 
-## 🔍 Format Overview
+## What is `.ftai`?
 
-Each `.ftai` file consists of **structured metadata blocks** and **free-form prose**, marked by clear `@section` headers and `---` boundaries.
+`.ftai` is a universal protocol for **traceability**, **provenance**, and **AI-human collaboration**.
+
+It combines the clarity of Markdown with the structure of JSON — and adds **auditability**, **cryptographic validation**, and **decision-chain trace capture**. `.ftai` is designed for real-world environments where **what happened** and **why it happened** must never be separated.
+
+---
+
+## Why `.ftai` Exists
+
+> JSON and YAML describe *data*.  
+> `.ftai` describes *reasoning.*
+
+In a future ruled by autonomous systems and high-stakes decision-making, **intent and traceability** are non-negotiable.  
+`.ftai` was built for that future — and for the people building inside it.
+
+It doesn’t just capture *what* an AI, a medic, or a system decided.  
+It captures *why*.
 
 ---
 
-## 📘 Example
+## Core Advantages
 
-```ftai
-@ftai folktech-memory (2025-04-19)
+- **Human-Readable First.**  
+  Designed for clarity under pressure — whether you're on a scene or on a server.
 
-@document
-title: The Founding of FolkTech AI
-author: Mike Folk
-tags: [origin, history, vision]
-schema: founder_memory
+- **Deterministic Parsing.**  
+  Strict grammar, canonicalization rules, reproducible digests. No silent drift.
+
+- **Auditability by Default.**  
+  Every `.ftai` file can be signed, traced, and verified.
+
+- **Extensible and Modular.**  
+  Built for schema extensions, typed validation, and future version negotiation.
+
+- **Offline-First.**  
+  `.ftai` works in zero-cloud, airgapped, or adverse environments without degradation.
+
+- **Proven in Production.**  
+  Already deployed inside **PocketMedic** — serving EMS personnel and healthcare workers in the field.
 
 ---
-In 2023, Mike Folk founded FolkTech AI with a single mission:
-to make AI human-first, privacy-secure, and voice-integrated.
 
-He believed that AI should speak with us, not just compute for us,
-and that intelligence must be grounded in ethical design.
+## Core Components
+
+| Component | Purpose |
+|:---|:---|
+| `.ftai` grammar | Strict format and parsing rules |
+| `.ftaischema` | Type system and field validation |
+| Canonicalization Spec | Reproducible digests, signature envelopes |
+| Streaming & Framing | Lossless transmission, edge device logging |
+
 ---
 
-@ai_note
-mode: core_memory
-encoding: sentimental_logical
-relevance: founder_identity
-@end
+## Getting Started
 
+_Work in progress — full spec and examples coming soon:_
 
+- `/spec/` — Core grammar and rules  
+- `/examples/` — Real `.ftai` files (EMS, agent chains, audit logs)  
+- `/parser/` — Parser implementations (Python, Rust coming soon)
 
-⸻
+Join the early adopters building a **traceable AI world**.
 
-✅ Key Features
+---
 
-Feature	Description
-@ftai	Format header with type/version metadata
-@document	Human-readable metadata block
-@ai_note	AI-targeted directives and memory flags
-@memory	Optional memory scope (persistence, access, size)
----	Delimiters for separating prose and blocks
-@task / @agent / @config	Extendable blocks for planning, roles, and system flags
-Inline prose	No quotes or escaping — write like a journal
+## License
 
+Licensed under the Apache License 2.0.
 
+You are free to fork, adapt, and build on the `.ftai` format specification — **however**,  
+the `.ftai` name, logo, and associated trademarks are property of FolkTech Industries and protected under applicable trademark laws.  
+Unauthorized use of the `.ftai` name or logo without compliance with the official spec and permission is prohibited.
 
-⸻
+---
 
-🔧 Tooling Roadmap
+## About FolkTech
 
-Tool	Status
-Swift parser	🛠️ In Dev
-Python parser	🛠️ In Dev
-FTAI → JSON converter	📌 Planned
-JSON → FTAI converter	📌 Planned
-VS Code syntax highlighter	📌 Planned
-Schema linter / validator	📌 Planned
+**FolkTech** was founded to push AI-human ecosystems toward **transparency**, **durability**, and **dignity**.  
+We don't build for compliance checkboxes.  
+We build for **history**.
 
+`.ftai` is our open challenge to the black-box future.  
+Join us.
 
-
-⸻
-
-🧠 Why Not Just JSON or YAML?
-
-Because traditional formats weren’t made for people:
-	•	JSON is great for machines but a nightmare to hand-edit
-	•	YAML is fragile, indentation-sensitive, and error-prone
-	•	Both lose tone, narrative anchoring, and AI-instruction placement
-
-.ftai solves this by embedding human and AI context in-line, with structure that feels like natural writing.
-
-⸻
-
-📁 Current Structure
-
-spec/
-├── example/
-│   ├── config/
-│   ├── memory/
-│   ├── protocols/
-│   └── sandbox/ (optional)
-├── parsers/         # Python and Swift tooling
-├── spec.md          # Core technical ruleset
-├── README.md        # This file
-
-
-
-⸻
-
-📜 License
-
-Licensed under the Apache 2.0 License — free to use, fork, and extend.
-Just give credit where it’s due.
-
-⸻
-
-🚀 Get Involved
+---
 
 We’re building this format in the open.
 Submit ideas, report parser issues, or contribute tools and examples.
