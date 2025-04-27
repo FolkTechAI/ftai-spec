@@ -8,42 +8,48 @@ Status: Finalized
 
 🚀 Major Improvements
 	•	Emphasis Parsing Resilience:
-	•	Parsers must treat unmatched **bold** markers as plain text without error.
+Parsers must treat unmatched **bold** markers as plain text without error.
 	•	Structured Tables Enforcement:
-	•	Tables must include a header, --- divider, and maintain consistent column counts.
-	•	No blank header cells allowed to ensure deterministic parsing.
+Tables must include a header row, an immediate --- divider, and maintain consistent column counts across rows.
+No blank header cells allowed to ensure deterministic parsing.
 	•	Namespace Expansion:
-	•	Reserved prefixes expanded to include @sys*, @internal*, @debug*, and @_* for future system and infrastructure tags.
+Reserved prefixes expanded to include @sys*, @internal*, @debug*, and @_* for future system and infrastructure tags.
 	•	Hierarchy Hardening:
-	•	Maximum depth set at two levels (@section, @@subsection).
-	•	Deeper structures require external file inclusion via @include.
+Maximum depth restricted to two levels (@section, @@subsection).
+Deeper nesting requires external file inclusion via @include.
 	•	Type-Hint System Introduced:
-	•	Tag suffixes like :int, :float, :bool, :date standardize parsing across implementations.
+Tags can now use type-hint suffixes (e.g., :int, :float, :bool, :date) to standardize parsing across implementations.
+Missing hint defaults to UTF-8 string.
 	•	Clarified Purpose and Core Syntax:
-	•	Improved explanations for tags, block closures, quoting behavior, and human-readable emphasis.
+Improved explanations for tag usage, block closure, quoting rules, and human-readable emphasis.
+	•	Canonical Mini Example Added:
+A complete working .ftai file example is included to demonstrate proper structure, block nesting, table usage, and feedback handling.
 
 ⸻
 
 🧠 Guiding Principles Reinforced
 	•	Deterministic:
-Parsing must always produce the same AST across platforms.
+Parsing must always produce the same AST (Abstract Syntax Tree) across platforms and parsers.
 	•	Traceable:
-Specifications embed rationale, history, and enable audit integrity.
+Specifications must embed rationale, structure history, and support audit hashing.
 	•	Minimal:
-No unnecessary punctuation or verbose markup.
+No unnecessary punctuation, markup, or verbosity in document construction.
 	•	Composable:
-Documents bridge cleanly into JSON, YAML, or other structured data formats.
+Documents must bridge cleanly and losslessly into JSON, YAML, or other structured formats without extra transformation layers.
 
 ⸻
 
 📦 Package Contents
-	•	Spec File: /spec/grammar/FTAI_grammar_syntax_v1.6.md
-	•	Canonical Mini Example: Included inside spec for real-world application reference.
-	•	Reserved Namespace Definitions: Locked for system safety and extensibility.
+	•	Spec File:
+/spec/grammar/FTAI_grammar_syntax_v1.6.md
+	•	Canonical Mini Example:
+Embedded inside the spec for real-world application reference, covering critical v1.6 features.
+	•	Reserved Namespace Definitions:
+Locked-in namespace restrictions to guarantee system safety and future scalability.
 
 ⸻
 
-✅ Status:
+✅ Status
 
 FTAI Grammar v1.6 is approved and production-ready.
-This version represents the first formal, public-ready release of the FolkTechAI .ftai communication protocol.
+This version represents the first formal, public-ready release of the FolkTechAI .ftai communication protocol standard.
