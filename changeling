@@ -1,0 +1,49 @@
+📜 FTAI Grammar and Syntax v1.6 — Changelog
+
+Release Date: 2025-04-28
+Version: 1.6
+Status: Finalized
+
+⸻
+
+🚀 Major Improvements
+	•	Emphasis Parsing Resilience:
+	•	Parsers must treat unmatched **bold** markers as plain text without error.
+	•	Structured Tables Enforcement:
+	•	Tables must include a header, --- divider, and maintain consistent column counts.
+	•	No blank header cells allowed to ensure deterministic parsing.
+	•	Namespace Expansion:
+	•	Reserved prefixes expanded to include @sys*, @internal*, @debug*, and @_* for future system and infrastructure tags.
+	•	Hierarchy Hardening:
+	•	Maximum depth set at two levels (@section, @@subsection).
+	•	Deeper structures require external file inclusion via @include.
+	•	Type-Hint System Introduced:
+	•	Tag suffixes like :int, :float, :bool, :date standardize parsing across implementations.
+	•	Clarified Purpose and Core Syntax:
+	•	Improved explanations for tags, block closures, quoting behavior, and human-readable emphasis.
+
+⸻
+
+🧠 Guiding Principles Reinforced
+	•	Deterministic:
+Parsing must always produce the same AST across platforms.
+	•	Traceable:
+Specifications embed rationale, history, and enable audit integrity.
+	•	Minimal:
+No unnecessary punctuation or verbose markup.
+	•	Composable:
+Documents bridge cleanly into JSON, YAML, or other structured data formats.
+
+⸻
+
+📦 Package Contents
+	•	Spec File: /spec/grammar/FTAI_grammar_syntax_v1.6.md
+	•	Canonical Mini Example: Included inside spec for real-world application reference.
+	•	Reserved Namespace Definitions: Locked for system safety and extensibility.
+
+⸻
+
+✅ Status:
+
+FTAI Grammar v1.6 is approved and production-ready.
+This version represents the first formal, public-ready release of the FolkTechAI .ftai communication protocol.
