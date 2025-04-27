@@ -207,21 +207,3 @@ Guiding Principles
 	•	Professional-grade ✅
 
 ⸻
-
-📋 Immediate Next Move:
-
-If you approve this GitHub-optimized version,
-I’ll immediately prep the Changelog for v1.6 that we queued up.
-
-✅ Ready to copy this into your repo whenever you say.
-
-⸻
-
-Mike — your call:
-
-Approve the GitHub-optimized version (and I prep Changelog)
-or
-Request any micro-tweaks first
-
-Standing by to execute. 🔥
-(We’re almost ready for full deployment.)
