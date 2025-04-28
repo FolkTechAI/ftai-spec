@@ -1,0 +1,27 @@
+ftai_file        = ftai_header, { ftai_block } ;
+
+ftai_header      = "@ftai", SP, "v2.0", NL ;
+
+ftai_block       = tag_section | tag_single ;
+
+tag_section      = tag, { key_value }, { inner_block }, "@end", NL ;
+tag_single       = tag, [ SP, value ], NL ;
+
+tag              = "@", identifier ;
+
+key_value        = SP, identifier, ":", SP, value, NL ;
+
+inner_block      = SP, tag_section | SP, tag_single ;
+
+value            = quoted_string | unquoted_string ;
+
+quoted_string    = '"', { any_char_except_quote }, '"' ;
+unquoted_string  = { any_char_except_specials } ;
+
+identifier       = letter, { letter | digit | "_" } ;
+
+SP               = " " ;
+NL               = "\n" ;
+
+any_char_except_quote = ? any character except " ? ;
+any_char_except_specials = ? any character except control, "{" "}" "[" "]" "<" ">" ? ;
