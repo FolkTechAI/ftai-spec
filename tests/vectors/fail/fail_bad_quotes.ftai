@@ -1,0 +1,10 @@
+@ftai v2.0
+
+@document Quotes Fail
+  owner: Mike
+  date: 2025-04-29
+@end
+
+@section Quotes
+  description: "This is an unterminated quote
+@end
