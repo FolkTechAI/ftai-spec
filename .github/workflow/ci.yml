@@ -1,0 +1,44 @@
+name: FTAI Linter CI
+
+on:
+  push:
+    paths:
+      - 'tests/vectors/pass/**'
+      - 'tests/vectors/fail/**'
+  pull_request:
+    paths:
+      - 'tests/vectors/pass/**'
+      - 'tests/vectors/fail/**'
+
+jobs:
+  lint-ftai:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: Install FTAI Linter
+      run: |
+        pip install .
+        pip install -r requirements.txt || true
+
+    - name: Run linter on passing vectors
+      run: |
+        ftai_cli lint tests/vectors/pass/
+
+    - name: Ensure failure vectors are invalid
+      run: |
+        for file in tests/vectors/fail/*.ftai; do
+          if ftai_cli lint "$file"; then
+            echo "❌ $file unexpectedly passed linting!"
+            exit 1
+          else
+            echo "✅ $file correctly failed linting."
+          fi
+        done
