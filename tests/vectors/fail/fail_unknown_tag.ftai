@@ -1,0 +1,9 @@
+@ftai v2.0
+
+@document Tag Fail
+  owner: Mike
+  date: 2025-04-29
+@end
+
+@banana This should fail
+@end
