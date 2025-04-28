@@ -1,0 +1,14 @@
+@ftai v2.0
+
+@document Table Fail
+  owner: Mike
+  date: 2025-04-29
+@end
+
+@section Table Test
+  @table Bad Table
+    Name | Value
+    Test1 | 123
+    Test2 | 456
+  @end
+@end
