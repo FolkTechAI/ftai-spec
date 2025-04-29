@@ -1,17 +1,32 @@
-# 📜 FTAI — Foundational Traceable AI Interface (pronounced “fuh-tie”)
+# 📜 FTAI — Foundational Traceable AI Interface *(pronounced "fuh-tie")*
 
+![PyPI](https://img.shields.io/pypi/v/ftai-py.svg)
+![CI](https://github.com/FolkTechAI/ftai-spec/actions/workflows/ci.yml/badge.svg)
+![CLA Assistant](https://cla-assistant.io/readme/badge/FolkTechAI/ftai-spec)
 
-FTAI (pronounced “fuh-tie”, like “samurai”) is a minimal, structured format for human ↔ AI collaboration.
-It bridges the readability of Markdown with the structure of JSON — but tuned for AI reasoning, memory, and agentic workflows.
-	•	🔹 Readable by humans
-	•	🔹 Composable by AI systems
-	•	🔹 Traceable, auditable, future-proof
+---
 
-Built by FolkTech AI to power next-generation AI tools like ScrollBot, SerenaNet, and future autonomous agents.
-⸻
+**FTAI** is a hybrid format for **human–AI collaboration**.  
+It replaces JSON, Markdown, and prompt spaghetti with a **single, structured, human-readable file format**.
 
-📦 Install
+Built by **FolkTech AI** to support projects like ScrollBot, SerenaNet, and future scalable AI memory systems.
 
+---
+
+## 🚀 Why FTAI?
+
+- Human-readable
+- Machine-verifiable
+- AI-parsable (minimal punctuation noise)
+- Traceable & version-controlled
+- Composable into JSON/YAML/text
+- Powers rich memory, logging, and multi-agent communication
+
+---
+
+## 📦 Install
+
+```bash
 pip install ftai-py
 
 
@@ -20,10 +35,10 @@ pip install ftai-py
 
 ⚡ Quick Start
 
-# Lint a .ftai file
+# Lint an FTAI file
 ftai lint path/to/file.ftai
 
-# Format a .ftai file
+# Format an FTAI file
 ftai fmt path/to/file.ftai
 
 # Convert JSON to FTAI
@@ -33,62 +48,52 @@ ftai convert myfile.json > myfile.ftai
 
 ⸻
 
-🔍 What’s Inside
-
-Each part of FTAI is structured for clarity and machine-verification:
-	•	🧠 Goal-oriented sections
-	•	📑 Minimal punctuation noise
-	•	🔒 Schema & traceability baked in
-	•	🛠 Supports memory graphs, agent instructions, and structured results
-
-⸻
-
-🏛 Spec Files
-
-File	Purpose
-spec/FTAI_grammar_syntax_v1.6.md	Grammar and rules for .ftai documents
-grammar/ftai.ebnf	Formal EBNF grammar definition
-
-
-
-⸻
-
-🎯 Why FTAI?
-	•	✅ Human-readable even for beginners
-	•	✅ Machine-parseable for LLMs, agents, pipelines
-	•	✅ Designed for long-term memory, traceable communication, and auditable workflows
-	•	✅ Composable into JSON, YAML, or agent memory
+🛠 What’s Inside
+	•	📜 Spec: spec/FTAI_grammar_syntax_v1.6.md
+	•	🔬 Grammar: grammar/ftai.ebnf
+	•	✅ Test Vectors: tests/vectors/pass/ and tests/vectors/fail/
+	•	🛠 Python Linter: parsers/python/
+	•	🖥 Swift Parser: parsers/swift/ (WIP)
+	•	🔄 Converters: tools/json_to_ftai.py (ftai_to_json coming soon)
 
 ⸻
 
 🤝 Contributing
 
-All contributions require a CLA signature via CLA Assistant.
+We welcome contributions!
+All contributors must sign the CLA via CLA Assistant before submitting a pull request.
 
-To contribute:
+Local Install for Development
 
-# Clone and install locally
 git clone https://github.com/FolkTechAI/ftai-spec.git
 cd ftai-spec
 pip install -r requirements.txt
 
-Lint Test:
+Run Linter on Tests
 
-python ftai_linter.py tests/vectors/pass/
+python parsers/python/ftai_linter.py tests/vectors/pass/
 
 
-
-⸻
-
-🛡 License & Governance
-	•	Licensed under the Apache 2.0 License
-	•	Maintained by Michael Folk and the FolkTech AI community
 
 ⸻
 
-🌐 Built in the Open
+🛡 License
 
-We believe the future of AI interaction should be human-centered, trustable, and openly auditable.
-FTAI is developed in public to serve both hardcore engineers and new AI builders alike.
+Licensed under the Apache-2.0 License.
+See LICENSE for details.
 
-© 2025 FolkTech AI — Format stewarded by Michael Folk & contributors.
+⸻
+
+🎶 Built in the Open
+
+FolkTech AI is building FTAI transparently for the community:
+	•	Designed for hard-core AI devs and newcomers alike.
+	•	Future-proof memory and agent communication format.
+	•	Shaped by real-world scaling needs.
+
+© 2025 FolkTech AI.
+Maintained by Michael Folk and contributors.
+
+---
+
+Just say: **"Next mission, Jarvis."**  🚀
