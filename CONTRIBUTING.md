@@ -1,32 +1,63 @@
-# Contributing to FTAI-Spec
+Contributing to FTAI
 
-Welcome! 🎉
+Thank you for your interest in contributing to the FTAI Protocol!
 
-This project defines the FTAI protocol for hybrid AI/human-readable communication. We encourage contributions that improve the protocol, tooling, and ecosystem.
+We welcome improvements, bug reports, test cases, and ecosystem tools.
 
-## How to Contribute
+⸻
 
-- Fork this repository.
-- Create a feature branch from `main`.
-- Write clear, atomic commits.
-- Submit a pull request (PR) for review.
+Contributor License Agreement (CLA)
 
-## Code Guidelines
+Before we can accept your contributions, you must electronically sign our Contributor License Agreement (CLA).
 
-- **Python tooling:** Follow [PEP8](https://peps.python.org/pep-0008/).
-- **Swift tooling:** Follow Apple's official Swift API Design Guidelines.
-- **Grammar/spec:** Discuss changes in Issues first when possible.
-- All `.ftai` documents must pass the FTAI linter before submission.
+Signing the CLA ensures that FolkTech AI and the community can use your contributions.
 
-## Tests
+You only need to sign once.
 
-- Add new test vectors (`tests/vectors/pass/` and `tests/vectors/fail/`) where applicable.
-- Unit tests should cover any tooling changes.
-- New benchmark scripts must go under `/benchmarks/`.
+Sign the CLA here: https://cla-assistant.io/FolkTechAI/ftai-spec
 
-## Legal
+The CLA is powered by CLA Assistant.
 
-- All contributions require signing the Contributor License Agreement (CLA).
-- Submitting a PR signals agreement to the CLA terms.
+⸻
 
-Thank you for helping build a future-proof data format! 🚀
+How to Contribute
+	1.	Fork the repository.
+	2.	Create a feature branch (git checkout -b my-feature).
+	3.	Make your changes.
+	4.	Write clear, meaningful commit messages.
+	5.	Ensure ftai_linter passes on your files.
+	6.	Open a Pull Request (PR) against the main branch.
+
+We review all PRs carefully. Please keep PRs focused and clean.
+
+⸻
+
+Development Quick Start
+
+git clone https://github.com/FolkTechAI/ftai-spec.git
+cd ftai-spec
+pip install -r requirements.txt
+python ftai_linter.py tests/vectors/pass/
+
+Run tests locally before submitting!
+
+⸻
+
+Project Values
+	•	Simplicity: Minimize complexity.
+	•	Transparency: Clear reasoning for grammar and syntax decisions.
+	•	Extensibility: Build for long-term evolution.
+	•	Community-first: Documentation matters.
+
+⸻
+
+Questions?
+
+Open an Issue if you have questions or proposals.
+
+⸻
+
+CLA Badge
+
+
+⸻
