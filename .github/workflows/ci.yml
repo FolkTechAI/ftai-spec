@@ -23,16 +23,28 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Install dummy dependencies
+    - name: Install Python dependencies
       run: |
-        echo "Skipping install for now..."
+        python3 -m pip install -r requirements.txt
 
     - name: Run linter on passing vectors
       run: |
-        echo "Pretending to lint pass/ vectors..."  
-        ls tests/vectors/pass/
+        for file in tests/vectors/pass/*.ftai; do
+          echo "Linting $file..."
+          python3 parsers/ftai_linter.py "$file"
+        done
 
-    - name: Ensure failure vectors are invalid
+    - name: Ensure failure vectors trigger errors
       run: |
-        echo "Pretending to check fail/ vectors..."
-        ls tests/vectors/fail/
+        set +e
+        for file in tests/vectors/fail/*.ftai; do
+          echo "Checking that $file fails..."
+          python3 parsers/ftai_linter.py "$file"
+          if [ $? -eq 0 ]; then
+            echo "❌ ERROR: $file should have failed but passed!"
+            exit 1
+          else
+            echo "✅ Correctly failed $file"
+          fi
+        done
+        set -e
