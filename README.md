@@ -1,16 +1,14 @@
-📜 FTAI — FolkTech AI Protocol
+📜 FTAI — Foundational Traceable AI Interface
 
-FTAI is a next-generation format built for high-context AI ↔ human collaboration.
-It replaces JSON, Markdown, YAML, and prompt spaghetti with a single, structured, human-readable system.
+⸻
 
-Why FTAI?
-	•	Human-readable without sacrificing structure
-	•	AI-parseable by modern models, small or large
-	•	Minimal punctuation noise — no endless brackets, quotes, or commas
-	•	Composable — bridges cleanly to JSON, YAML, XML
-	•	Optimized for memory, logging, agent reasoning — not just storage
+FTAI is a minimal, structured format for human ↔ AI collaboration.
+It bridges the readability of Markdown with the structure of JSON — but tuned for AI reasoning, memory, and agentic workflows.
+	•	🔹 Readable by humans
+	•	🔹 Composable by AI systems
+	•	🔹 Traceable, auditable, future-proof
 
-FTAI is designed for builders who want traceability, performance, and clarity — without fighting the format.
+Built by FolkTech AI to power next-generation AI tools like ScrollBot, SerenaNet, and future autonomous agents.
 
 ⸻
 
@@ -24,10 +22,10 @@ pip install ftai-py
 
 ⚡ Quick Start
 
-# Lint a file
+# Lint a .ftai file
 ftai lint path/to/file.ftai
 
-# Format a file
+# Format a .ftai file
 ftai fmt path/to/file.ftai
 
 # Convert JSON to FTAI
@@ -37,85 +35,62 @@ ftai convert myfile.json > myfile.ftai
 
 ⸻
 
-🛠️ Spec Files
-	•	Grammar: spec/FTAI_grammar_syntax_v1.6.md
-	•	Formal Syntax: grammar/ftai.ebnf
+🔍 What’s Inside
+
+Each part of FTAI is structured for clarity and machine-verification:
+	•	🧠 Goal-oriented sections
+	•	📑 Minimal punctuation noise
+	•	🔒 Schema & traceability baked in
+	•	🛠 Supports memory graphs, agent instructions, and structured results
 
 ⸻
 
-🔥 Why We’re Building FTAI
+🏛 Spec Files
 
-FTAI isn’t just another file format.
+File	Purpose
+spec/FTAI_grammar_syntax_v1.6.md	Grammar and rules for .ftai documents
+grammar/ftai.ebnf	Formal EBNF grammar definition
 
-It’s a response to the overcomplication of modern data interchange — and the loss of human readability in favor of machine optimization.
 
-We believe you shouldn’t have to choose between:
-	•	Writing for machines
-	•	Writing for humans
-	•	Writing for agents
 
-FTAI unifies all three.
+⸻
 
-It’s lightweight enough for embedded systems.
-It’s rich enough for AI agents and autonomous pipelines.
-It’s clear enough for real-world teams.
+🎯 Why FTAI?
+	•	✅ Human-readable even for beginners
+	•	✅ Machine-parseable for LLMs, agents, pipelines
+	•	✅ Designed for long-term memory, traceable communication, and auditable workflows
+	•	✅ Composable into JSON, YAML, or agent memory
 
 ⸻
 
 🤝 Contributing
 
-We welcome serious contributors.
-All PRs require a signed Contributor License Agreement (CLA) — managed through CLA Assistant.
+All contributions require a CLA signature via CLA Assistant.
 
-Before contributing:
+To contribute:
 
-# Clone and set up locally
+# Clone and install locally
 git clone https://github.com/FolkTechAI/ftai-spec.git
 cd ftai-spec
 pip install -r requirements.txt
 
-Run the linter tests:
+Lint Test:
 
 python ftai_linter.py tests/vectors/pass/
 
-If you add new features, make sure you update test vectors and docs.
+
 
 ⸻
 
-📜 License
-
-Licensed under the Apache 2.0 License.
-You are free to use, modify, and redistribute — provided you follow the license terms.
-
-⸻
-
-🛡️ Governance
-
-FTAI is maintained under the FolkTech AI stewardship model:
-	•	Transparent release cycles
-	•	Open discussion on improvements
-	•	CLA signatures required for major changes
-	•	Formal governance document here
+🛡 License & Governance
+	•	Licensed under the Apache 2.0 License
+	•	Maintained by Michael Folk and the FolkTech AI community
 
 ⸻
 
-🚀 About FolkTech AI
+🌐 Built in the Open
 
-FolkTech AI builds tools, formats, and systems for the future of human-AI collaboration — focused on ethics, performance, and clarity.
+We believe the future of AI interaction should be human-centered, trustable, and openly auditable.
+FTAI is developed in public to serve both hardcore engineers and new AI builders alike.
 
-FTAI is our first major public standard.
-More tools, educational resources, and frameworks will follow.
-
-⸻
-
-🎵 Built in the Open
-
-We believe in simple formats that outlive hype cycles.
-FTAI was built with care, in the open, and for the builders.
-
-© 2025 FolkTech AI
-Format maintained by Mike Folk and contributors. 🌱
-
-⸻
-
-© 2025 FolkTech AI • Format maintained by Mike Folk and contributors
+© 2025 FolkTech AI — Format stewarded by Michael Folk & contributors.
