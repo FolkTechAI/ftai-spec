@@ -1,4 +1,4 @@
-📜 FTAI — Foundational Traceable AI Interface (pronounced “fuh-tie”)
+# 📜 FTAI — Foundational Traceable AI Interface (pronounced “fuh-tie”)
 
 
 ⸻
@@ -25,7 +25,7 @@ YAML for reasoning.
 
 ⸻
 
-📦 Install
+# 📦 Install
 
 pip install ftai-py
 
@@ -33,7 +33,7 @@ pip install ftai-py
 
 ⸻
 
-⚡ Quick Start
+# ⚡ Quick Start
 
 # Lint an FTAI file
 ftai lint tests/vectors/pass/example.ftai
@@ -48,7 +48,7 @@ ftai convert your_file.json > your_file.ftai
 
 ⸻
 
-🛠 What’s Inside
+# 🛠 What’s Inside
 
 File/Directory	Purpose
 spec/FTAI_grammar_syntax_v1.6.md	Grammar and ruleset
@@ -62,7 +62,7 @@ tools/json_to_ftai.py	JSON ➔ FTAI converter script
 
 ⸻
 
-🤝 Contributing
+# 🤝 Contributing
 
 We welcome thoughtful contributors!
 All Pull Requests require signing our Contributor License Agreement (CLA) first.
@@ -81,7 +81,7 @@ python parsers/python/ftai_linter.py tests/vectors/pass/
 
 ⸻
 
-🛡 License & Governance
+# 🛡 License & Governance
 	•	License: Apache 2.0
 	•	Governance: GOVERNANCE.md
 	•	Security Disclosure: SECURITY.md
@@ -91,7 +91,7 @@ designed for long-term stability, not churn.
 
 ⸻
 
-🌱 Built in the Open
+# 🌱 Built in the Open
 
 FTAI is designed for the future of machine interaction:
 clear enough for a person, structured enough for a model,
