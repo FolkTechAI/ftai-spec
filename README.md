@@ -1,32 +1,32 @@
-# 📜 FTAI — Foundational Traceable AI Interface *(pronounced "fuh-tie")*
+📜 FTAI — Foundational Traceable AI Interface (pronounced “fuh-tie”)
 
-![PyPI](https://img.shields.io/pypi/v/ftai-py.svg)
-![CI](https://github.com/FolkTechAI/ftai-spec/actions/workflows/ci.yml/badge.svg)
-![CLA Assistant](https://cla-assistant.io/readme/badge/FolkTechAI/ftai-spec)
 
----
+⸻
 
-**FTAI** is a hybrid format for **human–AI collaboration**.  
-It replaces JSON, Markdown, and prompt spaghetti with a **single, structured, human-readable file format**.
+FTAI is a hybrid format for human–AI collaboration,
+designed to replace JSON, Markdown, YAML, and ad-hoc prompt sprawl
+with a structured, minimal, human-readable protocol.
 
-Built by **FolkTech AI** to support projects like ScrollBot, SerenaNet, and future scalable AI memory systems.
+Built for serious AI developers, researchers, and agent architects —
+but accessible enough for new builders learning to speak to machines.
 
----
+⸻
 
-## 🚀 Why FTAI?
+🚀 Why FTAI?
+	•	Readable by humans. Parseable by models.
+	•	Deterministic: always yields the same structure across systems.
+	•	Traceable: embeds rationale, constraints, and memory scopes directly.
+	•	Composable: bridges cleanly into JSON, YAML, text embeddings, or pipelines.
+	•	Minimal: No noisy punctuation, no nested spaghetti.
 
-- Human-readable
-- Machine-verifiable
-- AI-parsable (minimal punctuation noise)
-- Traceable & version-controlled
-- Composable into JSON/YAML/text
-- Powers rich memory, logging, and multi-agent communication
+FTAI is Markdown for agents.
+JSON for intelligence.
+YAML for reasoning.
 
----
+⸻
 
-## 📦 Install
+📦 Install
 
-```bash
 pip install ftai-py
 
 
@@ -36,40 +36,44 @@ pip install ftai-py
 ⚡ Quick Start
 
 # Lint an FTAI file
-ftai lint path/to/file.ftai
+ftai lint tests/vectors/pass/example.ftai
 
-# Format an FTAI file
-ftai fmt path/to/file.ftai
+# Format a file
+ftai fmt your_file.ftai
 
 # Convert JSON to FTAI
-ftai convert myfile.json > myfile.ftai
+ftai convert your_file.json > your_file.ftai
 
 
 
 ⸻
 
 🛠 What’s Inside
-	•	📜 Spec: spec/FTAI_grammar_syntax_v1.6.md
-	•	🔬 Grammar: grammar/ftai.ebnf
-	•	✅ Test Vectors: tests/vectors/pass/ and tests/vectors/fail/
-	•	🛠 Python Linter: parsers/python/
-	•	🖥 Swift Parser: parsers/swift/ (WIP)
-	•	🔄 Converters: tools/json_to_ftai.py (ftai_to_json coming soon)
+
+File/Directory	Purpose
+spec/FTAI_grammar_syntax_v1.6.md	Grammar and ruleset
+grammar/ftai.ebnf	Formal syntax definition (EBNF)
+tests/vectors/pass/	Validating good examples
+tests/vectors/fail/	Testing parsing failures
+parsers/python/	Python linter and CLI tool
+tools/json_to_ftai.py	JSON ➔ FTAI converter script
+
+
 
 ⸻
 
 🤝 Contributing
 
-We welcome contributions!
-All contributors must sign the CLA via CLA Assistant before submitting a pull request.
+We welcome thoughtful contributors!
+All Pull Requests require signing our Contributor License Agreement (CLA) first.
 
-Local Install for Development
+Local Development Setup
 
 git clone https://github.com/FolkTechAI/ftai-spec.git
 cd ftai-spec
 pip install -r requirements.txt
 
-Run Linter on Tests
+Run Tests Locally
 
 python parsers/python/ftai_linter.py tests/vectors/pass/
 
@@ -77,23 +81,26 @@ python parsers/python/ftai_linter.py tests/vectors/pass/
 
 ⸻
 
-🛡 License
+🛡 License & Governance
+	•	License: Apache 2.0
+	•	Governance: GOVERNANCE.md
+	•	Security Disclosure: SECURITY.md
 
-Licensed under the Apache-2.0 License.
-See LICENSE for details.
+FTAI is stewarded with transparent, reviewable releases —
+designed for long-term stability, not churn.
 
 ⸻
 
-🎶 Built in the Open
+🌱 Built in the Open
 
-FolkTech AI is building FTAI transparently for the community:
-	•	Designed for hard-core AI devs and newcomers alike.
-	•	Future-proof memory and agent communication format.
-	•	Shaped by real-world scaling needs.
+FTAI is designed for the future of machine interaction:
+clear enough for a person, structured enough for a model,
+powerful enough for autonomous systems.
 
-© 2025 FolkTech AI.
-Maintained by Michael Folk and contributors.
+Built openly by FolkTech AI and Michael Folk with contributions from the community.
 
----
+⸻
 
-Just say: **"Next mission, Jarvis."**  🚀
+© 2025 FolkTech AI — Format maintained by Mike Folk and contributors.
+
+⸻
