@@ -1,99 +1,121 @@
-# `.ftai — Functional Traceable AI Architecture Format`
+📜 FTAI — FolkTech AI Protocol
 
-**Human-readable. Machine-verifiable. Future-proof.**
+FTAI is a next-generation format built for high-context AI ↔ human collaboration.
+It replaces JSON, Markdown, YAML, and prompt spaghetti with a single, structured, human-readable system.
 
----
+Why FTAI?
+	•	Human-readable without sacrificing structure
+	•	AI-parseable by modern models, small or large
+	•	Minimal punctuation noise — no endless brackets, quotes, or commas
+	•	Composable — bridges cleanly to JSON, YAML, XML
+	•	Optimized for memory, logging, agent reasoning — not just storage
 
-## What is `.ftai`?
+FTAI is designed for builders who want traceability, performance, and clarity — without fighting the format.
 
-`.ftai` is a universal protocol for **traceability**, **provenance**, and **AI-human collaboration**.
+⸻
 
-It combines the clarity of Markdown with the structure of JSON — and adds **auditability**, **cryptographic validation**, and **decision-chain trace capture**. `.ftai` is designed for real-world environments where **what happened** and **why it happened** must never be separated.
+📦 Install
 
----
+pip install ftai-py
 
-## Why `.ftai` Exists
 
-> JSON and YAML describe *data*.  
-> `.ftai` describes *reasoning.*
 
-In a future ruled by autonomous systems and high-stakes decision-making, **intent and traceability** are non-negotiable.  
-`.ftai` was built for that future — and for the people building inside it.
+⸻
 
-It doesn’t just capture *what* an AI, a medic, or a system decided.  
-It captures *why*.
+⚡ Quick Start
 
----
+# Lint a file
+ftai lint path/to/file.ftai
 
-## Core Advantages
+# Format a file
+ftai fmt path/to/file.ftai
 
-- **Human-Readable First.**  
-  Designed for clarity under pressure — whether you're on a scene or on a server.
+# Convert JSON to FTAI
+ftai convert myfile.json > myfile.ftai
 
-- **Deterministic Parsing.**  
-  Strict grammar, canonicalization rules, reproducible digests. No silent drift.
 
-- **Auditability by Default.**  
-  Every `.ftai` file can be signed, traced, and verified.
 
-- **Extensible and Modular.**  
-  Built for schema extensions, typed validation, and future version negotiation.
+⸻
 
-- **Offline-First.**  
-  `.ftai` works in zero-cloud, airgapped, or adverse environments without degradation.
+🛠️ Spec Files
+	•	Grammar: spec/FTAI_grammar_syntax_v1.6.md
+	•	Formal Syntax: grammar/ftai.ebnf
 
-- **Proven in Production.**  
-  Already deployed inside **PocketMedic** — serving EMS personnel and healthcare workers in the field.
+⸻
 
----
+🔥 Why We’re Building FTAI
 
-## Core Components
+FTAI isn’t just another file format.
 
-| Component | Purpose |
-|:---|:---|
-| `.ftai` grammar | Strict format and parsing rules |
-| `.ftaischema` | Type system and field validation |
-| Canonicalization Spec | Reproducible digests, signature envelopes |
-| Streaming & Framing | Lossless transmission, edge device logging |
+It’s a response to the overcomplication of modern data interchange — and the loss of human readability in favor of machine optimization.
 
----
+We believe you shouldn’t have to choose between:
+	•	Writing for machines
+	•	Writing for humans
+	•	Writing for agents
 
-## Getting Started
+FTAI unifies all three.
 
-_Work in progress — full spec and examples coming soon:_
+It’s lightweight enough for embedded systems.
+It’s rich enough for AI agents and autonomous pipelines.
+It’s clear enough for real-world teams.
 
-- `/spec/` — Core grammar and rules  
-- `/examples/` — Real `.ftai` files (EMS, agent chains, audit logs)  
-- `/parser/` — Parser implementations (Python, Rust coming soon)
+⸻
 
-Join the early adopters building a **traceable AI world**.
+🤝 Contributing
 
----
+We welcome serious contributors.
+All PRs require a signed Contributor License Agreement (CLA) — managed through CLA Assistant.
 
-## License
+Before contributing:
 
-Licensed under the Apache License 2.0.
+# Clone and set up locally
+git clone https://github.com/FolkTechAI/ftai-spec.git
+cd ftai-spec
+pip install -r requirements.txt
 
-You are free to fork, adapt, and build on the `.ftai` format specification — **however**,  
-the `.ftai` name, logo, and associated trademarks are property of FolkTech Industries and protected under applicable trademark laws.  
-Unauthorized use of the `.ftai` name or logo without compliance with the official spec and permission is prohibited.
+Run the linter tests:
 
----
+python ftai_linter.py tests/vectors/pass/
 
-## About FolkTech
+If you add new features, make sure you update test vectors and docs.
 
-**FolkTech** was founded to push AI-human ecosystems toward **transparency**, **durability**, and **dignity**.  
-We don't build for compliance checkboxes.  
-We build for **history**.
+⸻
 
-`.ftai` is our open challenge to the black-box future.  
-Join us.
+📜 License
 
----
+Licensed under the Apache 2.0 License.
+You are free to use, modify, and redistribute — provided you follow the license terms.
 
-We’re building this format in the open.
-Submit ideas, report parser issues, or contribute tools and examples.
+⸻
 
-👉 github.com/mfolk77/ftai-spec
+🛡️ Governance
+
+FTAI is maintained under the FolkTech AI stewardship model:
+	•	Transparent release cycles
+	•	Open discussion on improvements
+	•	CLA signatures required for major changes
+	•	Formal governance document here
+
+⸻
+
+🚀 About FolkTech AI
+
+FolkTech AI builds tools, formats, and systems for the future of human-AI collaboration — focused on ethics, performance, and clarity.
+
+FTAI is our first major public standard.
+More tools, educational resources, and frameworks will follow.
+
+⸻
+
+🎵 Built in the Open
+
+We believe in simple formats that outlive hype cycles.
+FTAI was built with care, in the open, and for the builders.
+
+© 2025 FolkTech AI
+Format maintained by Mike Folk and contributors. 🌱
+
+⸻
 
 © 2025 FolkTech AI • Format maintained by Mike Folk and contributors
