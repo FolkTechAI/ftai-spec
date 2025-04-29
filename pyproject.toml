@@ -7,7 +7,7 @@ authors = [
 ]
 requires-python = ">=3.8"
 readme = "README.md"
-license = { text = "Apache-2.0" }
+license = "Apache-2.0"
 
 [project.scripts]
 ftai = "ftai_linter:main"
@@ -15,3 +15,6 @@ ftai = "ftai_linter:main"
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["ftai_linter"]
