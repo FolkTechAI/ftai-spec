@@ -1,0 +1,17 @@
+[project]
+name = "ftai-py"
+version = "0.1.0"
+description = "FTAI CLI tool for linting, formatting, and converting .ftai files."
+authors = [
+    { name = "Mike Folk", email = "support@folktech.ai" }
+]
+requires-python = ">=3.8"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+
+[project.scripts]
+ftai = "ftai_linter:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
