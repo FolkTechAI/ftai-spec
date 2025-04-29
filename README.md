@@ -1,8 +1,8 @@
-📜 FTAI — Foundational Traceable AI Interface
+# 📜 FTAI — Foundational Traceable AI Interface
 
 ⸻
 
-FTAI is a minimal, structured format for human ↔ AI collaboration.
+FTAI is a minimal, structured format for human ↔ AI collaboration. Pronounced “F-Tie.”
 It bridges the readability of Markdown with the structure of JSON — but tuned for AI reasoning, memory, and agentic workflows.
 	•	🔹 Readable by humans
 	•	🔹 Composable by AI systems
