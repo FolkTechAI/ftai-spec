@@ -1,0 +1,44 @@
+@ftai v2.0
+
+@document
+@title FTAI Schema – medical.core
+@description Core schema for EMS and clinical protocol documents, used by FTAI for validation and AI-enhanced RAG systems.
+@version 1.0
+@created 2025-05-04
+@updated 2025-05-04
+@author FolkTech AI
+@end
+
+@schema medical.core
+@title Core EMS/Medical Protocol Schema
+@version 1.0
+@description Defines standard tags used in emergency and prehospital care protocols. Enables AI-assisted parsing, validation, and retrieval of medical procedures, medications, and workflows.
+@created 2025-05-04
+@created_by Mike (FolkTech AI)
+@license MIT
+
+@required
+- @protocol              # Unique ID for the protocol block (machine-parseable)
+- @title                 # Human-readable title
+- @end                   # Must be used to close each @protocol block
+
+@optional
+- @agency                # EMS or hospital system name
+- @region                # Geographic service area
+- @last_updated          # Last revised date (YYYY-MM-DD)
+- @indications           # When to apply the protocol
+- @contraindications     # When NOT to apply the protocol
+- @procedure             # Step-by-step actions
+- @medications           # Drug names, doses, routes, etc.
+- @notes                 # Cautions, additional info, field notes
+- @references            # Source material or medical guidelines
+- @ai_note               # Metadata for AI use (tags, token cost, RAG relevance)
+- @tags                  # Freeform tags for categorization/search
+
+@notes
+- Only blocks explicitly listed in `@required` need `@end`
+- Tags inside blocks should only appear once unless future schemas allow repeat
+- List-style values must begin with `- `
+- Tags must start at the line beginning and use `@tag` format
+- Tags may include alphanumeric characters, periods, and underscores only
+@end
