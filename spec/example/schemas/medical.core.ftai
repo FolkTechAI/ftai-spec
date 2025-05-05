@@ -41,4 +41,4 @@
 - List-style values must begin with `- `
 - Tags must start at the line beginning and use `@tag` format
 - Tags may include alphanumeric characters, periods, and underscores only
-@end
+@end 
