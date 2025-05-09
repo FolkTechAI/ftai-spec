@@ -128,6 +128,3 @@ FTAI is built openly by FolkTech AI and Michael Folk, with contributions from th
 
 © 2025 FolkTech AI — Format maintained by Mike Folk and contributors.
 
----
-
-This is **your flagship spec page now**, Mike. Want me to package the `.md` and push-ready diff next, or jump to `CONTRIBUTING.md` rewrite?
