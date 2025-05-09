@@ -1,39 +1,34 @@
 # 📜 FTAI — Foundational Traceable AI Interface (pronounced “fuh-tie”)
 
+FTAI is a hybrid format for human–AI collaboration, designed to replace JSON, Markdown, YAML, and ad-hoc prompt sprawl with a structured, minimal, human-readable protocol.
 
-⸻
+Built for serious AI developers, researchers, and agent architects — but accessible enough for new builders learning to speak to machines.
 
-FTAI is a hybrid format for human–AI collaboration,
-designed to replace JSON, Markdown, YAML, and ad-hoc prompt sprawl
-with a structured, minimal, human-readable protocol.
+FTAI is Markdown for agents. JSON for intelligence. YAML for reasoning.
 
-Built for serious AI developers, researchers, and agent architects —
-but accessible enough for new builders learning to speak to machines.
+---
 
-⸻
+## 🚀 Why FTAI?
 
-🚀 Why FTAI?
-	•	Readable by humans. Parseable by models.
-	•	Deterministic: always yields the same structure across systems.
-	•	Traceable: embeds rationale, constraints, and memory scopes directly.
-	•	Composable: bridges cleanly into JSON, YAML, text embeddings, or pipelines.
-	•	Minimal: No noisy punctuation, no nested spaghetti.
+- 🧠 **Readable by humans. Parseable by models.**
+- 🧩 **Deterministic:** Always yields the same structure across systems.
+- 🔍 **Traceable:** Embeds rationale, constraints, and memory scopes directly.
+- 🔧 **Composable:** Bridges into JSON, YAML, text embeddings, or pipelines.
+- 🧼 **Minimal:** No noisy punctuation, no nested spaghetti.
 
-FTAI is Markdown for agents.
-JSON for intelligence.
-YAML for reasoning.
+FTAI is designed for the future of machine interaction: clear enough for a person, structured enough for a model, powerful enough for autonomous systems.
 
-⸻
+---
 
-# 📦 Install
+## 📦 Install
 
+```bash
 pip install ftai-py
 
 
-
 ⸻
 
-# ⚡ Quick Start
+#⚡ Quick Start
 
 # Lint an FTAI file
 ftai lint tests/vectors/pass/example.ftai
@@ -45,62 +40,94 @@ ftai fmt your_file.ftai
 ftai convert your_file.json > your_file.ftai
 
 
+⸻
+
+#🧠 What Is .ftai?
+
+FTAI is a plaintext format using @tags for structure and clarity.
+
+@schema
+required_tags: @title, @description, @end
+optional_tags: @source, @notes
+@end
+
+@title
+CPR Protocol
+
+@description
+Step-by-step adult CPR procedure.
+
+@source
+AHA 2020 Guidelines
+
+@end
+
 
 ⸻
 
-# 🛠 What’s Inside
+#🧪 Validator Tools
+	•	parsers/ftai_linter.py: Python validator with strict/loose modes
+	•	parsers/FTAIValidator.swift: iOS-compatible Swift parser
+	•	tools/json_to_ftai.py: (coming soon) JSON ➔ FTAI converter
 
-File/Directory	Purpose
-spec/FTAI_grammar_syntax_v1.6.md	Grammar and ruleset
-grammar/ftai.ebnf	Formal syntax definition (EBNF)
-tests/vectors/pass/	Validating good examples
-tests/vectors/fail/	Testing parsing failures
-parsers/python/	Python linter and CLI tool
+⸻
+
+#🗂 What’s Inside
+
+Path	Purpose
+spec/FTAI_grammar_syntax_v1.6.md	Grammar and format rules
+grammar/ftai.ebnf	Formal EBNF syntax definition
+tests/vectors/pass/	Valid test cases
+tests/vectors/fail/	Rejected edge cases
+parsers/python/	Python linter and CLI
 tools/json_to_ftai.py	JSON ➔ FTAI converter script
 
 
-
 ⸻
 
-# 🤝 Contributing
+#🤝 Contributing
 
 We welcome thoughtful contributors!
-All Pull Requests require signing our Contributor License Agreement (CLA) first.
 
-Local Development Setup
-
+# Local Dev Setup
 git clone https://github.com/FolkTechAI/ftai-spec.git
 cd ftai-spec
-pip install -r requirements.txt
+pip install -e '.[dev]'
 
-Run Tests Locally
-
+# Run tests
 python parsers/python/ftai_linter.py tests/vectors/pass/
 
-
+All PRs require signing the Contributor License Agreement (CLA).
 
 ⸻
 
-# 🛡 License & Governance
+#📌 Use Cases
+
+FTAI is powering:
+	•	📱 AI-enhanced medical apps like Pocket Medic
+	•	📚 Educational LMS pipelines
+	•	🧠 AI memory + local RAG systems
+	•	⚙️ Automation scripts, dev agents, and function calling
+
+⸻
+
+#🛡 License & Governance
 	•	License: Apache 2.0
-	•	Governance: GOVERNANCE.md
-	•	Security Disclosure: SECURITY.md
+	•	Governance: See GOVERNANCE.md
+	•	Security Disclosure: See SECURITY.md
 
-FTAI is stewarded with transparent, reviewable releases —
-designed for long-term stability, not churn.
+FTAI is stewarded with transparent, reviewable releases — designed for long-term stability, not churn.
 
 ⸻
 
-# 🌱 Built in the Open
+#🌱 Built in the Open
 
-FTAI is designed for the future of machine interaction:
-clear enough for a person, structured enough for a model,
-powerful enough for autonomous systems.
-
-Built openly by FolkTech AI and Michael Folk with contributions from the community.
+FTAI is built openly by FolkTech AI and Michael Folk, with contributions from the community. It exists to make structured, AI-human communication futureproof — with no bloat and maximum clarity.
 
 ⸻
 
 © 2025 FolkTech AI — Format maintained by Mike Folk and contributors.
 
-⸻
+---
+
+This is **your flagship spec page now**, Mike. Want me to package the `.md` and push-ready diff next, or jump to `CONTRIBUTING.md` rewrite?
