@@ -1,0 +1,95 @@
+# 📜 FTAI Grammar and Syntax — v1.6 Changelog
+
+**Release Date:** 2025-04-28  
+**Version:** 1.6  
+**Status:** Finalized
+
+---
+
+## 🚀 Major Improvements
+
+- **Emphasis Parsing Resilience**  
+  Parsers must treat unmatched `**bold**` markers as plain text without error. This ensures graceful fallback during parsing of malformed emphasis.
+
+- **Structured Table Enforcement**  
+  Tables must:
+  - Include a header row
+  - Use an immediate `---` divider
+  - Maintain consistent column counts across all rows  
+  Blank header cells are not allowed to ensure deterministic rendering and structural clarity.
+
+- **Namespace Expansion**  
+  Reserved prefixes now include:
+  - `@sys*`
+  - `@internal*`
+  - `@debug*`
+  - `@_*`  
+  These are locked for future system-level and infrastructure operations.
+
+- **Hierarchy Hardening**  
+  Maximum block nesting is now limited to **two levels**:
+  - `@section`
+  - `@@subsection`  
+  Additional nesting must be offloaded to external files via the `@include` directive.
+
+- **Type-Hint System Introduced**  
+  Tags may now include type-hint suffixes to standardize parsing behavior:
+  - Examples: `:int`, `:float`, `:bool`, `:date`  
+  If no type hint is present, the default is interpreted as a UTF-8 string.
+
+- **Syntax Clarification and Cleanup**  
+  The spec now includes:
+  - Clear guidance on when to use core tags
+  - Explicit rules for block closures, quoting, and nested behavior
+  - Updated examples for human-readable emphasis and AI-internal comments
+
+- **Canonical Mini Example Included**  
+  A fully valid `.ftai` file example is now embedded in the spec to demonstrate:
+  - Proper structure
+  - Tag combinations
+  - Block nesting
+  - Table formatting
+  - Output handling
+
+---
+
+## 🧠 Guiding Principles Reinforced
+
+- **Deterministic**  
+  All `.ftai` files must produce identical ASTs (Abstract Syntax Trees) regardless of parser implementation or platform.
+
+- **Traceable**  
+  Specs must include versioning, rationale, change history, and audit-hash compatibility for integrity verification.
+
+- **Minimal**  
+  The syntax forbids unnecessary markup, punctuation, or excess formatting. `.ftai` must remain lean and human-readable.
+
+- **Composable**  
+  All `.ftai` files must convert **cleanly and losslessly** to JSON, YAML, or other structured formats with no external patching or field reconstruction.
+
+---
+
+## 📦 Package Contents
+
+- `FTAI_grammar_syntax_v1.6.md`  
+  Located in `/spec/grammar/` — this is the authoritative reference file.
+
+- **Canonical Mini Example**  
+  Embedded inside the grammar spec file. Demonstrates valid usage of:
+  - Core blocks
+  - Metadata
+  - Tables
+  - Memory sections
+  - AI prompts and responses
+
+- **Reserved Namespace Definitions**  
+  Located in the same directory. These define locked prefixes to ensure naming collision avoidance and safe scaling into system-level operations.
+
+---
+
+## ✅ Status
+
+FTAI Grammar v1.6 is **approved and production-ready**.  
+This release marks the **first formal public launch** of the `.ftai` communication protocol, standardizing structured communication between agents, AI systems, and humans.
+
+© 2025 FolkTech AI — All rights reserved.
