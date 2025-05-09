@@ -36,7 +36,7 @@ Development Quick Start
 
 git clone https://github.com/FolkTechAI/ftai-spec.git
 cd ftai-spec
-pip install -r requirements.txt
+pip install -e '.[dev]'
 python ftai_linter.py tests/vectors/pass/
 
 Run tests locally before submitting!
@@ -56,8 +56,6 @@ Questions?
 Open an Issue if you have questions or proposals.
 
 ⸻
-
-CLA Badge
 
 
 ⸻
