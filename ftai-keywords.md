@@ -1,127 +1,139 @@
+Here’s a tightened, clarified, and slightly expanded rewrite of your keywords.md for .ftai v2.0. This version:
+	•	Adds clarity to tag enforcement, quoted tag rules, and block handling
+	•	Makes formatting bulletproof for use in validation scripts and IDE plugins
+	•	Introduces @ref, @input, @output, @context, and @rules as officially recognized tags (commonly used in your own examples but not yet in the spec)
+
+⸻
+
+
 # .ftai Keyword Specification (v2.0)
 
-This document defines the **official tags** used in `.ftai` files.  
-Tags not listed here are considered **invalid** unless declared inside a schema or wrapped in proper custom syntax.
+This document defines the official tags used in `.ftai` files.
+
+Only tags listed here, or those explicitly declared in a schema or properly quoted, are considered valid. Any others will trigger a parser **warning or fatal error** depending on enforcement level.
 
 ---
 
 ## 🧱 Core Tags
 
-These are always valid and form the foundation of the `.ftai` format:
+These are always valid. They form the foundation of `.ftai`.
 
-| Tag         | Description |
-|--------------|-------------|
-| `@ftai`      | Declares version and document type (e.g., `@ftai memory-log (2025-04-20)`) |
-| `@document`  | Metadata block (title, author, schema, tags) |
-| `@schema`    | Defines required and optional tags for the document; may be written inline or reference an external schema file |
-| `@ai`        | AI-specific block for task configuration, mode, and encoding |
-| `@ai_note`   | AI memory guidance, commentary, or lighter directives |
-| `@memory`    | Declares a memory scope (access, persistence, size, etc.) |
-| `@task`      | Action instruction with defined steps |
-| `@config`    | Application or system configuration block |
-| `@agent`     | Multi-agent definitions and communication setup |
-| `@end`       | Terminates open blocks (required for `@ai`, `@task`, `@agent`, etc.) |
+| Tag        | Description |
+|------------|-------------|
+| `@ftai`    | Declares format version and file type. Must be the first line. Example: `@ftai memory-log (2025-04-20)` |
+| `@document`| Metadata block: title, author, schema, and tags |
+| `@schema`  | Defines required/optional tags for this file; can be inline or reference external schemas |
+| `@ai`      | AI-specific configuration block (mode, target, encoding, etc.) |
+| `@ai_note` | Guidance to the AI, not shown to users or saved to memory |
+| `@task`    | Explicit instruction or action with defined structure |
+| `@memory`  | Declares a memory block (scope, persistence, TTL, etc.) |
+| `@agent`   | Used to define or message multiple agents |
+| `@input`   | Used inside tasks or memory to declare expected input |
+| `@output`  | Used to define expected or generated output format |
+| `@context` | Supplemental background for a task or decision |
+| `@rules`   | Constraints or logic rules associated with a task or input |
+| `@config`  | App or system-specific configuration block |
+| `@ref`     | External reference (e.g., URLs, IDs, datasets, or citation anchors) |
+| `@end`     | Required terminator for open blocks like `@ai`, `@task`, `@agent` |
+
 ---
 
 ## 🧾 Optional / Legacy Tags
 
-| Tag         | Usage |
-|--------------|--------|
-| `@tags`      | Optional array-style tag list (legacy/loose) |
-| `@schema`    | Inline schema definition block for custom formats |
-| `@version`   | Alternative version override (use sparingly) |
-| `@author`    | Overrides the default author block, rarely needed |
+These are still supported for backward compatibility or loose formats.
+
+| Tag       | Usage |
+|-----------|-------|
+| `@tags`   | Legacy tag list inside `@document`; superseded by `tags:` field |
+| `@version`| Manual override for versioning (use rarely) |
+| `@title`  | Legacy — superseded by `title:` in `@document` |
+| `@author` | Can override metadata block; discouraged |
 
 ---
 
 ## 🔒 Restricted / Banned Tags
 
-Do **not** use the following unless you're inside internal developer tooling:
+The following tags are **banned or reserved**:
 
-- `@fuck_you`, `@meta`, `@system`, `@debug`, `@prompt`, etc.
+- `@fuck_you`, `@system`, `@prompt`, `@debug`, `@meta`, etc.
 
-These are either banned, reserved for internal use, or unsupported.  
-Any tag not defined here or within an active schema should trigger a parser **warning or fatal error** depending on enforcement level.
+These should only appear in internal dev test cases. Unapproved usage will trigger **fatal validation errors**.
 
 ---
 
 ## 🧩 Quoted Tags (`@"custom_tag"`)
 
-Quoted tags allow **one-off structured elements** to exist in `.ftai` files *without requiring a full schema*.
+Quoted tags allow one-off structured fields without schema declaration.  
+They are **only valid** when:
 
-### When to Use Quoted Tags
+- No schema is present
+- Working in sandbox/draft mode
+- Using the `@x_` or `@sandbox` prefix
 
-| Situation                     | Use `@"tag"`? | Notes |
-|-------------------------------|---------------|-------|
-| No schema, but needs AI to catch a field | ✅ Yes | Useful for large freeform documents |
-| Schema is declared            | ❌ No          | Use declared tags from schema |
-| Temporary drafts / sandbox    | ✅ Optional    | Allowed with `@sandbox` or `@x_` prefix |
-
-> Quoted tags should only be used **sparingly** and must not conflict with core tags.
-
-### Example:
-```ftai
+Example:
+```plaintext
 @"patient_summary"
-This patient had a witnessed arrest with ROSC achieved at 14:03.
+This patient had a witnessed arrest and ROSC at 14:03.
 
-
+Warning: Overuse (>25 in one file) triggers a parser warning.
+Quoted tags must not duplicate core tag names.
 
 ⸻
 
-📐 Field Format & Block Rules
-	•	Use key: value syntax for fields inside blocks:
+##📐 Block Syntax & Field Format
+	•	Use key: value format inside structured blocks:
 
 @document
 title: "EMS Protocol"
 author: "Mike Folk"
 schema: "ems_med_card_v1"
 tags: [medication, emergency]
+@end
 
-	•	Use --- to separate sections of prose or logic
-	•	All @ai, @task, @memory, and @agent blocks must terminate with @end
+	•	Use --- to separate logical prose sections
+	•	All open blocks (@ai, @task, @memory, @agent) must be closed with @end
+	•	Nested blocks allowed only when explicitly defined (e.g., @agent inside @ai)
 
 ⸻
 
-🚫 Non-Compliance Handling
+##🚫 Non-Compliance Handling
 
 Issue	Example	Severity
 Unknown tag	@fuck_you	Fatal
-Missing @end for block	@ai without @end	Fatal/Warning
-Missing @ftai at top	—	Fatal
+Unclosed block	@task with no @end	Fatal/Warning
+Missing @ftai header	—	Fatal
 Malformed metadata	title "oops"	Warning
 Misordered blocks	@ai before @document	Warning
-Overuse of quoted tags	25+ @"weird" tags	Warning
-
+Quoted tag spam	25+ @"weird" tags	Warning
 
 
 ⸻
 
-🧠 Parsing Guidelines
-	•	Always validate tags against:
+##🧠 Parsing Guidelines
+	•	Validate tag legality against:
 	•	This file
-	•	Declared schema (inline or external)
-	•	Quoted tag syntax (if no schema)
-	•	Strip leading/trailing whitespace before parsing
-	•	Only support block nesting when explicitly allowed (e.g., @agent inside @ai)
-	•	Support future comment syntax with # or //
+	•	The declared schema (if present)
+	•	Quoted tag syntax (if allowed)
+	•	Strip leading/trailing whitespace
+	•	Support future inline comment syntax with # or //
+	•	Support schema loading from .ftai, .json, or remote schema URLs
 
 ⸻
 
-📌 Version
+##📌 Version
 
-This document applies to:
+This specification applies to:
 
 @ftai v2.0
 
 
-
 ⸻
 
-🛠 Want to Contribute?
+##🛠 Want to Contribute?
 
-Submit a pull request or file a schema proposal:
+Submit issues or pull requests:
 👉 https://github.com/mfolk77/ftai-spec
 
-⸻
+© 2025 FolkTech AI — Maintained by Mike Folk and core contributors.
 
-© 2025 FolkTech AI — Maintained by Mike Folk and contributors
+---
