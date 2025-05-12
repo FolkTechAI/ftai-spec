@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  build-test-lint:
+  test-and-lint:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -16,38 +16,33 @@ jobs:
         color: ["--color", "--no-color"]
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
 
     - name: Install dependencies
       run: |
-        pip install . pytest pytest-cov
+        python -m pip install --upgrade pip
+        pip install -r requirements-dev.txt
 
-    - name: Lint passing file
+    - name: Run linter on pass vectors
       run: |
         ftai lint tests/vectors/pass/pass_minimal.ftai ${{ matrix.mode }} ${{ matrix.color }}
 
-    - name: Lint failing file
+    - name: Run linter on fail vectors
       run: |
         ftai lint tests/vectors/fail/fail_quoted_tag_overflow.ftai ${{ matrix.mode }} ${{ matrix.color }}
       continue-on-error: false
 
-    - name: Run Pytest with Coverage
+    - name: Run pytest with coverage
       run: |
         pytest --cov=src/ftai_linter --cov-report=xml tests/
 
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v4
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v3
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        files: ./coverage.xml
-        fail_ci_if_error: true
-
-    - name: Confirm Success
-      if: success()
-      run: echo "✅ All tests and uploads completed."
