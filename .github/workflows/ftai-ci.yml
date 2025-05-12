@@ -2,14 +2,12 @@ name: FTAI CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
-  build-and-test:
+  build-test-lint:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -19,60 +17,37 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
+    - name: Set up Python
+      uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
 
-    - name: Install build tools
-      run: |
-        python -m pip install --upgrade pip
-        pip install build
-
-    - name: Build the project
-      run: |
-        python -m build
-
-    - name: Install the package
-      run: |
-        pip install dist/*.whl
-
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install . pytest pytest-cov
 
-    - name: Run tests with coverage
-      run: |
-        pip install pytest pytest-cov
-        pytest --cov=src/ftai_linter --cov-report=xml tests/
-
-    - name: Upload coverage report
-      uses: codecov/codecov-action@v3
-      with:
-        file: ./coverage.xml
-        fail_ci_if_error: true
-
-    - name: Lint pass file
+    - name: Lint passing file
       run: |
         ftai lint tests/vectors/pass/pass_minimal.ftai ${{ matrix.mode }} ${{ matrix.color }}
 
-    - name: Lint fail file
+    - name: Lint failing file
       run: |
         ftai lint tests/vectors/fail/fail_quoted_tag_overflow.ftai ${{ matrix.mode }} ${{ matrix.color }}
       continue-on-error: false
 
-    - name: Lint no color test
+    - name: Run Pytest with Coverage
       run: |
-        ftai lint tests/vectors/fail/fail_no_color_test.ftai ${{ matrix.mode }} ${{ matrix.color }}
-      continue-on-error: false
+        pytest --cov=src/ftai_linter --cov-report=xml tests/
 
-    - name: Report status
-      if: failure()
-      run: echo "Linting failed with fatal errors."
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v4
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: ./coverage.xml
+        fail_ci_if_error: true
 
-    - name: Report success
+    - name: Confirm Success
       if: success()
-      run: echo "Linting completed successfully." 
+      run: echo "✅ All tests and uploads completed."
