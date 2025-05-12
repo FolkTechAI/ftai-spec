@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: Apache-2.0
+
 🧠 Part 1: FTAIValidator.swift
 
 This Swift validator works with your existing FTAIBlock parser and mimics the Python linter behavior — full strict mode with schema parsing.

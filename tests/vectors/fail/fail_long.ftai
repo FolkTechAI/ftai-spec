@@ -1,0 +1,1510 @@
+// This file is used to trigger a long-file warning in strict mode.
+@note
+This is line 1
+@end
+@note
+This is line 2
+@end
+@note
+This is line 3
+@end
+@note
+This is line 4
+@end
+@note
+This is line 5
+@end
+@note
+This is line 6
+@end
+@note
+This is line 7
+@end
+@note
+This is line 8
+@end
+@note
+This is line 9
+@end
+@note
+This is line 10
+@end
+@note
+This is line 11
+@end
+@note
+This is line 12
+@end
+@note
+This is line 13
+@end
+@note
+This is line 14
+@end
+@note
+This is line 15
+@end
+@note
+This is line 16
+@end
+@note
+This is line 17
+@end
+@note
+This is line 18
+@end
+@note
+This is line 19
+@end
+@note
+This is line 20
+@end
+@note
+This is line 21
+@end
+@note
+This is line 22
+@end
+@note
+This is line 23
+@end
+@note
+This is line 24
+@end
+@note
+This is line 25
+@end
+@note
+This is line 26
+@end
+@note
+This is line 27
+@end
+@note
+This is line 28
+@end
+@note
+This is line 29
+@end
+@note
+This is line 30
+@end
+@note
+This is line 31
+@end
+@note
+This is line 32
+@end
+@note
+This is line 33
+@end
+@note
+This is line 34
+@end
+@note
+This is line 35
+@end
+@note
+This is line 36
+@end
+@note
+This is line 37
+@end
+@note
+This is line 38
+@end
+@note
+This is line 39
+@end
+@note
+This is line 40
+@end
+@note
+This is line 41
+@end
+@note
+This is line 42
+@end
+@note
+This is line 43
+@end
+@note
+This is line 44
+@end
+@note
+This is line 45
+@end
+@note
+This is line 46
+@end
+@note
+This is line 47
+@end
+@note
+This is line 48
+@end
+@note
+This is line 49
+@end
+@note
+This is line 50
+@end
+@note
+This is line 51
+@end
+@note
+This is line 52
+@end
+@note
+This is line 53
+@end
+@note
+This is line 54
+@end
+@note
+This is line 55
+@end
+@note
+This is line 56
+@end
+@note
+This is line 57
+@end
+@note
+This is line 58
+@end
+@note
+This is line 59
+@end
+@note
+This is line 60
+@end
+@note
+This is line 61
+@end
+@note
+This is line 62
+@end
+@note
+This is line 63
+@end
+@note
+This is line 64
+@end
+@note
+This is line 65
+@end
+@note
+This is line 66
+@end
+@note
+This is line 67
+@end
+@note
+This is line 68
+@end
+@note
+This is line 69
+@end
+@note
+This is line 70
+@end
+@note
+This is line 71
+@end
+@note
+This is line 72
+@end
+@note
+This is line 73
+@end
+@note
+This is line 74
+@end
+@note
+This is line 75
+@end
+@note
+This is line 76
+@end
+@note
+This is line 77
+@end
+@note
+This is line 78
+@end
+@note
+This is line 79
+@end
+@note
+This is line 80
+@end
+@note
+This is line 81
+@end
+@note
+This is line 82
+@end
+@note
+This is line 83
+@end
+@note
+This is line 84
+@end
+@note
+This is line 85
+@end
+@note
+This is line 86
+@end
+@note
+This is line 87
+@end
+@note
+This is line 88
+@end
+@note
+This is line 89
+@end
+@note
+This is line 90
+@end
+@note
+This is line 91
+@end
+@note
+This is line 92
+@end
+@note
+This is line 93
+@end
+@note
+This is line 94
+@end
+@note
+This is line 95
+@end
+@note
+This is line 96
+@end
+@note
+This is line 97
+@end
+@note
+This is line 98
+@end
+@note
+This is line 99
+@end
+@note
+This is line 100
+@end
+@note
+This is line 101
+@end
+@note
+This is line 102
+@end
+@note
+This is line 103
+@end
+@note
+This is line 104
+@end
+@note
+This is line 105
+@end
+@note
+This is line 106
+@end
+@note
+This is line 107
+@end
+@note
+This is line 108
+@end
+@note
+This is line 109
+@end
+@note
+This is line 110
+@end
+@note
+This is line 111
+@end
+@note
+This is line 112
+@end
+@note
+This is line 113
+@end
+@note
+This is line 114
+@end
+@note
+This is line 115
+@end
+@note
+This is line 116
+@end
+@note
+This is line 117
+@end
+@note
+This is line 118
+@end
+@note
+This is line 119
+@end
+@note
+This is line 120
+@end
+@note
+This is line 121
+@end
+@note
+This is line 122
+@end
+@note
+This is line 123
+@end
+@note
+This is line 124
+@end
+@note
+This is line 125
+@end
+@note
+This is line 126
+@end
+@note
+This is line 127
+@end
+@note
+This is line 128
+@end
+@note
+This is line 129
+@end
+@note
+This is line 130
+@end
+@note
+This is line 131
+@end
+@note
+This is line 132
+@end
+@note
+This is line 133
+@end
+@note
+This is line 134
+@end
+@note
+This is line 135
+@end
+@note
+This is line 136
+@end
+@note
+This is line 137
+@end
+@note
+This is line 138
+@end
+@note
+This is line 139
+@end
+@note
+This is line 140
+@end
+@note
+This is line 141
+@end
+@note
+This is line 142
+@end
+@note
+This is line 143
+@end
+@note
+This is line 144
+@end
+@note
+This is line 145
+@end
+@note
+This is line 146
+@end
+@note
+This is line 147
+@end
+@note
+This is line 148
+@end
+@note
+This is line 149
+@end
+@note
+This is line 150
+@end
+@note
+This is line 151
+@end
+@note
+This is line 152
+@end
+@note
+This is line 153
+@end
+@note
+This is line 154
+@end
+@note
+This is line 155
+@end
+@note
+This is line 156
+@end
+@note
+This is line 157
+@end
+@note
+This is line 158
+@end
+@note
+This is line 159
+@end
+@note
+This is line 160
+@end
+@note
+This is line 161
+@end
+@note
+This is line 162
+@end
+@note
+This is line 163
+@end
+@note
+This is line 164
+@end
+@note
+This is line 165
+@end
+@note
+This is line 166
+@end
+@note
+This is line 167
+@end
+@note
+This is line 168
+@end
+@note
+This is line 169
+@end
+@note
+This is line 170
+@end
+@note
+This is line 171
+@end
+@note
+This is line 172
+@end
+@note
+This is line 173
+@end
+@note
+This is line 174
+@end
+@note
+This is line 175
+@end
+@note
+This is line 176
+@end
+@note
+This is line 177
+@end
+@note
+This is line 178
+@end
+@note
+This is line 179
+@end
+@note
+This is line 180
+@end
+@note
+This is line 181
+@end
+@note
+This is line 182
+@end
+@note
+This is line 183
+@end
+@note
+This is line 184
+@end
+@note
+This is line 185
+@end
+@note
+This is line 186
+@end
+@note
+This is line 187
+@end
+@note
+This is line 188
+@end
+@note
+This is line 189
+@end
+@note
+This is line 190
+@end
+@note
+This is line 191
+@end
+@note
+This is line 192
+@end
+@note
+This is line 193
+@end
+@note
+This is line 194
+@end
+@note
+This is line 195
+@end
+@note
+This is line 196
+@end
+@note
+This is line 197
+@end
+@note
+This is line 198
+@end
+@note
+This is line 199
+@end
+@note
+This is line 200
+@end
+@note
+This is line 201
+@end
+@note
+This is line 202
+@end
+@note
+This is line 203
+@end
+@note
+This is line 204
+@end
+@note
+This is line 205
+@end
+@note
+This is line 206
+@end
+@note
+This is line 207
+@end
+@note
+This is line 208
+@end
+@note
+This is line 209
+@end
+@note
+This is line 210
+@end
+@note
+This is line 211
+@end
+@note
+This is line 212
+@end
+@note
+This is line 213
+@end
+@note
+This is line 214
+@end
+@note
+This is line 215
+@end
+@note
+This is line 216
+@end
+@note
+This is line 217
+@end
+@note
+This is line 218
+@end
+@note
+This is line 219
+@end
+@note
+This is line 220
+@end
+@note
+This is line 221
+@end
+@note
+This is line 222
+@end
+@note
+This is line 223
+@end
+@note
+This is line 224
+@end
+@note
+This is line 225
+@end
+@note
+This is line 226
+@end
+@note
+This is line 227
+@end
+@note
+This is line 228
+@end
+@note
+This is line 229
+@end
+@note
+This is line 230
+@end
+@note
+This is line 231
+@end
+@note
+This is line 232
+@end
+@note
+This is line 233
+@end
+@note
+This is line 234
+@end
+@note
+This is line 235
+@end
+@note
+This is line 236
+@end
+@note
+This is line 237
+@end
+@note
+This is line 238
+@end
+@note
+This is line 239
+@end
+@note
+This is line 240
+@end
+@note
+This is line 241
+@end
+@note
+This is line 242
+@end
+@note
+This is line 243
+@end
+@note
+This is line 244
+@end
+@note
+This is line 245
+@end
+@note
+This is line 246
+@end
+@note
+This is line 247
+@end
+@note
+This is line 248
+@end
+@note
+This is line 249
+@end
+@note
+This is line 250
+@end
+@note
+This is line 251
+@end
+@note
+This is line 252
+@end
+@note
+This is line 253
+@end
+@note
+This is line 254
+@end
+@note
+This is line 255
+@end
+@note
+This is line 256
+@end
+@note
+This is line 257
+@end
+@note
+This is line 258
+@end
+@note
+This is line 259
+@end
+@note
+This is line 260
+@end
+@note
+This is line 261
+@end
+@note
+This is line 262
+@end
+@note
+This is line 263
+@end
+@note
+This is line 264
+@end
+@note
+This is line 265
+@end
+@note
+This is line 266
+@end
+@note
+This is line 267
+@end
+@note
+This is line 268
+@end
+@note
+This is line 269
+@end
+@note
+This is line 270
+@end
+@note
+This is line 271
+@end
+@note
+This is line 272
+@end
+@note
+This is line 273
+@end
+@note
+This is line 274
+@end
+@note
+This is line 275
+@end
+@note
+This is line 276
+@end
+@note
+This is line 277
+@end
+@note
+This is line 278
+@end
+@note
+This is line 279
+@end
+@note
+This is line 280
+@end
+@note
+This is line 281
+@end
+@note
+This is line 282
+@end
+@note
+This is line 283
+@end
+@note
+This is line 284
+@end
+@note
+This is line 285
+@end
+@note
+This is line 286
+@end
+@note
+This is line 287
+@end
+@note
+This is line 288
+@end
+@note
+This is line 289
+@end
+@note
+This is line 290
+@end
+@note
+This is line 291
+@end
+@note
+This is line 292
+@end
+@note
+This is line 293
+@end
+@note
+This is line 294
+@end
+@note
+This is line 295
+@end
+@note
+This is line 296
+@end
+@note
+This is line 297
+@end
+@note
+This is line 298
+@end
+@note
+This is line 299
+@end
+@note
+This is line 300
+@end
+@note
+This is line 301
+@end
+@note
+This is line 302
+@end
+@note
+This is line 303
+@end
+@note
+This is line 304
+@end
+@note
+This is line 305
+@end
+@note
+This is line 306
+@end
+@note
+This is line 307
+@end
+@note
+This is line 308
+@end
+@note
+This is line 309
+@end
+@note
+This is line 310
+@end
+@note
+This is line 311
+@end
+@note
+This is line 312
+@end
+@note
+This is line 313
+@end
+@note
+This is line 314
+@end
+@note
+This is line 315
+@end
+@note
+This is line 316
+@end
+@note
+This is line 317
+@end
+@note
+This is line 318
+@end
+@note
+This is line 319
+@end
+@note
+This is line 320
+@end
+@note
+This is line 321
+@end
+@note
+This is line 322
+@end
+@note
+This is line 323
+@end
+@note
+This is line 324
+@end
+@note
+This is line 325
+@end
+@note
+This is line 326
+@end
+@note
+This is line 327
+@end
+@note
+This is line 328
+@end
+@note
+This is line 329
+@end
+@note
+This is line 330
+@end
+@note
+This is line 331
+@end
+@note
+This is line 332
+@end
+@note
+This is line 333
+@end
+@note
+This is line 334
+@end
+@note
+This is line 335
+@end
+@note
+This is line 336
+@end
+@note
+This is line 337
+@end
+@note
+This is line 338
+@end
+@note
+This is line 339
+@end
+@note
+This is line 340
+@end
+@note
+This is line 341
+@end
+@note
+This is line 342
+@end
+@note
+This is line 343
+@end
+@note
+This is line 344
+@end
+@note
+This is line 345
+@end
+@note
+This is line 346
+@end
+@note
+This is line 347
+@end
+@note
+This is line 348
+@end
+@note
+This is line 349
+@end
+@note
+This is line 350
+@end
+@note
+This is line 351
+@end
+@note
+This is line 352
+@end
+@note
+This is line 353
+@end
+@note
+This is line 354
+@end
+@note
+This is line 355
+@end
+@note
+This is line 356
+@end
+@note
+This is line 357
+@end
+@note
+This is line 358
+@end
+@note
+This is line 359
+@end
+@note
+This is line 360
+@end
+@note
+This is line 361
+@end
+@note
+This is line 362
+@end
+@note
+This is line 363
+@end
+@note
+This is line 364
+@end
+@note
+This is line 365
+@end
+@note
+This is line 366
+@end
+@note
+This is line 367
+@end
+@note
+This is line 368
+@end
+@note
+This is line 369
+@end
+@note
+This is line 370
+@end
+@note
+This is line 371
+@end
+@note
+This is line 372
+@end
+@note
+This is line 373
+@end
+@note
+This is line 374
+@end
+@note
+This is line 375
+@end
+@note
+This is line 376
+@end
+@note
+This is line 377
+@end
+@note
+This is line 378
+@end
+@note
+This is line 379
+@end
+@note
+This is line 380
+@end
+@note
+This is line 381
+@end
+@note
+This is line 382
+@end
+@note
+This is line 383
+@end
+@note
+This is line 384
+@end
+@note
+This is line 385
+@end
+@note
+This is line 386
+@end
+@note
+This is line 387
+@end
+@note
+This is line 388
+@end
+@note
+This is line 389
+@end
+@note
+This is line 390
+@end
+@note
+This is line 391
+@end
+@note
+This is line 392
+@end
+@note
+This is line 393
+@end
+@note
+This is line 394
+@end
+@note
+This is line 395
+@end
+@note
+This is line 396
+@end
+@note
+This is line 397
+@end
+@note
+This is line 398
+@end
+@note
+This is line 399
+@end
+@note
+This is line 400
+@end
+@note
+This is line 401
+@end
+@note
+This is line 402
+@end
+@note
+This is line 403
+@end
+@note
+This is line 404
+@end
+@note
+This is line 405
+@end
+@note
+This is line 406
+@end
+@note
+This is line 407
+@end
+@note
+This is line 408
+@end
+@note
+This is line 409
+@end
+@note
+This is line 410
+@end
+@note
+This is line 411
+@end
+@note
+This is line 412
+@end
+@note
+This is line 413
+@end
+@note
+This is line 414
+@end
+@note
+This is line 415
+@end
+@note
+This is line 416
+@end
+@note
+This is line 417
+@end
+@note
+This is line 418
+@end
+@note
+This is line 419
+@end
+@note
+This is line 420
+@end
+@note
+This is line 421
+@end
+@note
+This is line 422
+@end
+@note
+This is line 423
+@end
+@note
+This is line 424
+@end
+@note
+This is line 425
+@end
+@note
+This is line 426
+@end
+@note
+This is line 427
+@end
+@note
+This is line 428
+@end
+@note
+This is line 429
+@end
+@note
+This is line 430
+@end
+@note
+This is line 431
+@end
+@note
+This is line 432
+@end
+@note
+This is line 433
+@end
+@note
+This is line 434
+@end
+@note
+This is line 435
+@end
+@note
+This is line 436
+@end
+@note
+This is line 437
+@end
+@note
+This is line 438
+@end
+@note
+This is line 439
+@end
+@note
+This is line 440
+@end
+@note
+This is line 441
+@end
+@note
+This is line 442
+@end
+@note
+This is line 443
+@end
+@note
+This is line 444
+@end
+@note
+This is line 445
+@end
+@note
+This is line 446
+@end
+@note
+This is line 447
+@end
+@note
+This is line 448
+@end
+@note
+This is line 449
+@end
+@note
+This is line 450
+@end
+@note
+This is line 451
+@end
+@note
+This is line 452
+@end
+@note
+This is line 453
+@end
+@note
+This is line 454
+@end
+@note
+This is line 455
+@end
+@note
+This is line 456
+@end
+@note
+This is line 457
+@end
+@note
+This is line 458
+@end
+@note
+This is line 459
+@end
+@note
+This is line 460
+@end
+@note
+This is line 461
+@end
+@note
+This is line 462
+@end
+@note
+This is line 463
+@end
+@note
+This is line 464
+@end
+@note
+This is line 465
+@end
+@note
+This is line 466
+@end
+@note
+This is line 467
+@end
+@note
+This is line 468
+@end
+@note
+This is line 469
+@end
+@note
+This is line 470
+@end
+@note
+This is line 471
+@end
+@note
+This is line 472
+@end
+@note
+This is line 473
+@end
+@note
+This is line 474
+@end
+@note
+This is line 475
+@end
+@note
+This is line 476
+@end
+@note
+This is line 477
+@end
+@note
+This is line 478
+@end
+@note
+This is line 479
+@end
+@note
+This is line 480
+@end
+@note
+This is line 481
+@end
+@note
+This is line 482
+@end
+@note
+This is line 483
+@end
+@note
+This is line 484
+@end
+@note
+This is line 485
+@end
+@note
+This is line 486
+@end
+@note
+This is line 487
+@end
+@note
+This is line 488
+@end
+@note
+This is line 489
+@end
+@note
+This is line 490
+@end
+@note
+This is line 491
+@end
+@note
+This is line 492
+@end
+@note
+This is line 493
+@end
+@note
+This is line 494
+@end
+@note
+This is line 495
+@end
+@note
+This is line 496
+@end
+@note
+This is line 497
+@end
+@note
+This is line 498
+@end
+@note
+This is line 499
+@end
+@note
+This is line 500
+@end
+@note
+This is line 501
+@end
+@section
+Nested block example
+@note
+This is a nested note inside section
+@end
+@end

@@ -6,6 +6,5 @@
 @end
 
 @section Testing Section
-  @@subsection Subpoint
-    - Do something important
+  @note Do something important
 @end
