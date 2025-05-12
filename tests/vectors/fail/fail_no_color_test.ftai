@@ -1,0 +1,19 @@
+// Test file for verifying --no-color fallback behavior
+@invalidTag
+@note
+This is a test note.
+@end
+"@quoted_tag1"
+"@quoted_tag2"
+"@quoted_tag3"
+"@quoted_tag4"
+"@quoted_tag5"
+"@quoted_tag6"
+"@quoted_tag7"
+"@quoted_tag8"
+"@quoted_tag9"
+"@quoted_tag10"
+"@quoted_tag11"
+@note
+This block is for --no-color test output
+@end

@@ -1,0 +1,78 @@
+name: FTAI CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.11]
+        mode: ["--strict", "--lenient"]
+        color: ["--color", "--no-color"]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install build tools
+      run: |
+        python -m pip install --upgrade pip
+        pip install build
+
+    - name: Build the project
+      run: |
+        python -m build
+
+    - name: Install the package
+      run: |
+        pip install dist/*.whl
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run tests with coverage
+      run: |
+        pip install pytest pytest-cov
+        pytest --cov=src/ftai_linter --cov-report=xml tests/
+
+    - name: Upload coverage report
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage.xml
+        fail_ci_if_error: true
+
+    - name: Lint pass file
+      run: |
+        ftai lint tests/vectors/pass/pass_minimal.ftai ${{ matrix.mode }} ${{ matrix.color }}
+
+    - name: Lint fail file
+      run: |
+        ftai lint tests/vectors/fail/fail_quoted_tag_overflow.ftai ${{ matrix.mode }} ${{ matrix.color }}
+      continue-on-error: false
+
+    - name: Lint no color test
+      run: |
+        ftai lint tests/vectors/fail/fail_no_color_test.ftai ${{ matrix.mode }} ${{ matrix.color }}
+      continue-on-error: false
+
+    - name: Report status
+      if: failure()
+      run: echo "Linting failed with fatal errors."
+
+    - name: Report success
+      if: success()
+      run: echo "Linting completed successfully." 
