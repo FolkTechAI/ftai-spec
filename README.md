@@ -3,7 +3,7 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/FolkTechAI/ftai-spec/actions)
 [![PyPI](https://img.shields.io/badge/PyPI-v0.1.0-blue.svg)](https://pypi.org/project/ftai-py/)
-
+[![codecov](https://codecov.io/gh/FolkTechAI/ftai-spec/branch/main/graph/badge.svg)](https://codecov.io/gh/FolkTechAI/ftai-spec)
 
 ⸻
 
