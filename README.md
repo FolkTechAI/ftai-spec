@@ -53,6 +53,7 @@ This makes FTAI ideal for workflows involving screenshots, documents, diagrams, 
 
 ### From PyPI using pip (Recommended)
 
+
 ```bash
 pip install ftai
 ftai --version
