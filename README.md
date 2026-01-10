@@ -54,7 +54,9 @@ This makes FTAI ideal for workflows involving screenshots, documents, diagrams, 
 
 ```bash
 pip install ftai
+ftai --version
 ```
+If this prints a version number, FTAI is installed correctly.
 
 ### From Source
 
