@@ -49,7 +49,7 @@ This makes FTAI ideal for workflows involving screenshots, documents, diagrams, 
 
 ---
 
-## 📦 Install
+## 📦 Install 📦nstall
 
 ### From PyPI using pip (Recommended)
 
@@ -67,7 +67,6 @@ git clone https://github.com/FolkTechAI/ftai-spec.git
 cd ftai-spec
 pip install -e .
 ```
-
 ---
 
 ## ⚡ Quick Start
