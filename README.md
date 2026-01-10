@@ -1,6 +1,7 @@
 # 📜 FTAI — Foundational Traceable AI Interface
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![CI](https://github.com/FolkTechAI/ftai-spec/actions/workflows/ftai-ci.yml/badge.svg)](https://github.com/FolkTechAI/ftai-spec/actions/workflows/ftai-ci.yml)
 
 ---
 
@@ -35,6 +36,7 @@ FTAI natively handles image references for vision-capable AI models:
 
 @task
   analyze the image and identify the error message
+@end
 ```
 
 Images can be:
@@ -48,11 +50,19 @@ This makes FTAI ideal for workflows involving screenshots, documents, diagrams, 
 
 ## 📦 Install
 
+### From PyPI (Recommended)
+
 ```bash
 pip install ftai-py
 ```
 
-> Note: PyPI package coming soon. For now, clone the repo and install locally.
+### From Source
+
+```bash
+git clone https://github.com/FolkTechAI/ftai-spec.git
+cd ftai-spec
+pip install -e .
+```
 
 ---
 
@@ -60,13 +70,19 @@ pip install ftai-py
 
 ```bash
 # Lint an FTAI file
-ftai lint tests/vectors/pass/example.ftai
+ftai lint myfile.ftai
 
-# Format a file
-ftai fmt your_file.ftai
+# Lint with strict mode
+ftai lint myfile.ftai --strict
 
-# Convert JSON to FTAI (stub)
-ftai convert your_file.json > your_file.ftai
+# Lint with lenient mode (unknown tags as warnings)
+ftai lint myfile.ftai --lenient
+
+# Convert JSON to FTAI
+ftai convert data.json > output.ftai
+
+# Check version
+ftai --version
 ```
 
 ---
@@ -75,12 +91,53 @@ ftai convert your_file.json > your_file.ftai
 
 | File/Directory | Purpose |
 |----------------|---------|
-| `spec/FTAI_grammar_syntax_v1.6.md` | Grammar and ruleset |
+| `src/ftai_linter/` | Python package with CLI and linter |
 | `grammar/ftai.ebnf` | Formal syntax definition (EBNF) |
-| `tests/vectors/pass/` | Validating good examples |
-| `tests/vectors/fail/` | Testing parsing failures |
-| `parsers/python/` | Python linter and CLI tool |
-| `tools/json_to_ftai.py` | JSON → FTAI converter script |
+| `grammar/FTAI_grammar_syntax_v1.6.md` | Human-readable grammar spec |
+| `parsers/swift/` | Swift parser implementation |
+| `tests/vectors/pass/` | Valid FTAI examples |
+| `tests/vectors/fail/` | Invalid FTAI examples (for testing) |
+| `tools/json_to_ftai.py` | JSON → FTAI converter |
+| `spec/example/` | Real-world FTAI examples |
+
+---
+
+## 📝 Basic Syntax
+
+```ftai
+@ftai v2.0 lang:en
+
+@document
+  title: "My First FTAI Document"
+  author: "Your Name"
+  created: 2026-01-09
+
+@section Introduction
+  This is a simple FTAI document demonstrating the format.
+
+@task priority:high
+  description: Review the quarterly report
+  due: 2026-01-15
+@end
+
+@note
+  Remember to check the appendix for supporting data.
+```
+
+### Core Tags
+
+| Tag | Purpose |
+|-----|---------|
+| `@ftai` | Document header (required) |
+| `@document` | Document metadata (required) |
+| `@section` | Content section |
+| `@task` | Actionable task (requires `@end`) |
+| `@note` | Informational note |
+| `@warning` | Important warning |
+| `@config` | Configuration block (requires `@end`) |
+| `@memory` | Memory/context block (requires `@end`) |
+| `@image` | Image reference (multimodal) |
+| `@table` | Tabular data |
 
 ---
 
@@ -88,18 +145,19 @@ ftai convert your_file.json > your_file.ftai
 
 We welcome thoughtful contributors! All Pull Requests require signing our Contributor License Agreement (CLA) first.
 
-### Local Development Setup
+### Local Development
 
 ```bash
 git clone https://github.com/FolkTechAI/ftai-spec.git
 cd ftai-spec
-pip install -r requirements.txt
-```
+pip install -e .
+pip install pytest
 
-### Run Tests Locally
+# Run tests
+pytest tests/ -v
 
-```bash
-python parsers/python/ftai_linter.py tests/vectors/pass/
+# Test the CLI
+ftai lint tests/vectors/pass/pass_minimal.ftai
 ```
 
 ---
