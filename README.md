@@ -181,6 +181,8 @@ FTAI is designed for the future of machine interaction: clear enough for a perso
 
 Built openly by [FolkTech AI](https://folktechai.com) with contributions from the community.
 
+To read more about ftai, please enjoy one of our blog post at https://www.folktechai.com/post/beyond-json-why-it-s-time-for-a-human-native-format-for-ai
+
 ---
 
 © 2025-2026 FolkTech AI — Format maintained by Michael Folk and contributors.
