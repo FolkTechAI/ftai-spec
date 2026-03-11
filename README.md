@@ -6,7 +6,7 @@
 
 ---
 
-FTAI is a hybrid format for human–AI collaboration, designed to improve on JSON, Markdown, and YAML for AI-native workflows with a structured, minimal, human-readable protocol.
+FTAI is a hybrid format for human–AI & AI-AI collaboration, designed to improve on JSON, Markdown, and YAML for AI-native workflows with a structured, minimal, human-readable protocol.
 
 Built for serious AI developers, researchers, and agent architects — but accessible enough for new builders learning to speak to machines.
 
