@@ -1,7 +1,7 @@
 # SECURITY.md
 
 ## Reporting Vulnerabilities
-If you discover a vulnerability in the FTAI spec, please report it via email to security@folktechai.com.
+If you discover a vulnerability in the FTAI spec, please report it via email to michael.folk@folktechai.com.
 
 ## Threat Model
 - Input validation attacks on parsers
@@ -13,4 +13,4 @@ If you discover a vulnerability in the FTAI spec, please report it via email to 
 - Critical issues may be patched immediately with hotfix releases.
 
 ## Contact
-security@folktechai.com
+michael.folk@folktechai.com
